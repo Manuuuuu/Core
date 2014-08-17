@@ -4,7 +4,7 @@ if myHero.charName ~= "Lulu" then return end
 local player = GetMyHero()
 function OnTick()
 	ts:update()
-	if myHero:GetSpellData(_W).level > 0 and myHero:CanUseSpell(_W) == READY and lulu.WW and lulu.Enable and ts.target and ValidTarget(ts.target, nil) and GetDistance(ts.target) <= 650 then CastSpell(_W, ts.target) end
+	if myHero:GetSpellData(_W).level > 0 and myHero:CanUseSpell(_W) == READY and lulu.WW and lulu.Enable and ts.target and ValidTarget(ts.target, nil) and ts.target.type == player.type and GetDistance(ts.target) <= 650 then CastSpell(_W, ts.target) end
 end
 function OnLoad()
 	lulu = scriptConfig("luluW", "||| luluW 0818-1 |||")
