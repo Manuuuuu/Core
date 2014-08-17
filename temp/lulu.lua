@@ -1,4 +1,3 @@
---NEKO
 local SCRIPT_NAME = "luluW"
 if myHero.charName ~= "Lulu" then return end
 local player = GetMyHero()
