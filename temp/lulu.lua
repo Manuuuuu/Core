@@ -33,7 +33,7 @@ end
 function Menu_OnLoad()
 	OnLoadMenuEmbryo = true
 	lulu = scriptConfig("luluW", "||| luluW 0815-1 |||")
-	lulu:addSubMenu("WW", 	"visionRangeE")
+	lulu:addSubMenu("WW", 	"lulu's WW")
 	lulu.WW:addParam("useWW", 	"WW key: ", 	SCRIPT_PARAM_ONKEYDOWN, false, 32)
 	lulu.Enable:addParam("Enable", 			"Enable.",									SCRIPT_PARAM_ONOFF, true)	
 end
