@@ -28,7 +28,7 @@ function OnTick()
 			end
 		end
 	end	
-	if candidate and ValidTarget(candidate) and WREADY and lulu.WW and lulu.Enable then CastSpell(_W, enemy(650)) end
+	if candidate and ValidTarget(candidate) and WREADY and lulu.WW and lulu.Enable then CastSpell(_W, candidate) end
 end
 function Menu_OnLoad()
 	OnLoadMenuEmbryo = true
