@@ -7,7 +7,6 @@ function OnTick()
 	if myHero:GetSpellData(_W).level > 0 and myHero:CanUseSpell(_W) == READY and lulu.WW and lulu.Enable and ts.target and ValidTarget(ts.target, nil) and GetDistance(ts.target) <= 650 then CastSpell(_W, ts.target) end
 end
 function OnLoad()
-	OnLoadMenuEmbryo = true
 	lulu = scriptConfig("luluW", "||| luluW 0818-1 |||")
 	lulu:addSubMenu("WW", "lulu's WW")
 	lulu.WW:addParam("useWW", "WW key: ", SCRIPT_PARAM_ONKEYDOWN, false, 32)
