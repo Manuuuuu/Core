@@ -1,5 +1,6 @@
 [Version_History]
-latest = 4.8.4.4
+latest = 4.8.4.5
+4.8.4.5 SpeedUP
 4.8.4.4 HiddenWindow Detect add
 4.8.4.2 ForceClick bug Fix
 4.8.4.0 air client UI Changed
