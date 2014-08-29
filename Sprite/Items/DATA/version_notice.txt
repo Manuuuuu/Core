@@ -1,5 +1,5 @@
 [Version_History]
-latest = 4.8.4.6
+latest = 4.8.4.7
 4.8.4.6 auth bug fix
 4.8.4.5 SpeedUP
 4.8.4.4 HiddenWindow Detect add
