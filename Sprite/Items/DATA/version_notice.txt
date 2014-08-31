@@ -1,5 +1,6 @@
 [Version_History]
-latest = 4.9.0.1
+latest = 4.9.0.2
+4.9.0.2 Flexible login screen size
 4.9.0.0 auto login add
 4.8.4.6 auth bug fix
 4.8.4.5 SpeedUP
