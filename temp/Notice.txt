@@ -1,15 +1,2 @@
-﻿[Notice]
-4.9.0.2 Flexible login screen size
-4.9.0.0 auto login add
-4.8.4.6 auth bug fix
-4.8.4.5 SpeedUP
-4.8.4.4 HiddenWindow Detect add
-4.8.4.2 ForceClick bug Fix
-4.8.4.0 air client UI Changed
-4.8.3.6 text edited. no chg other things
-4.8.3.5 add module for subscription to Monthly
-4.8.3.4 minor bugs fix
-4.8.3.3 change server
-4.8.3.2 add ForceClick. If checked it take mouse control while run ingame. 
- for click game end. If you have trouble with game end session then turn on it.
-4.8.3.1 remove dooms bot menu
+﻿[공지 사항]
+버그 발생 시 메일 주세요.
