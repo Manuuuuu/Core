@@ -1,4 +1,4 @@
-﻿Neko5 Server Version: 1.0.0.5 
+﻿Neko5 Server Version: 1.0.0.6
 
 1. Run?
  need .Net Frame Work 4.51 or latested version
@@ -7,3 +7,7 @@
 
 2. Donator?
  NekoSeed.txt 을 첨부 하여 메일을 보내십시오.
+ 
+3. Exit?
+ 모든 롤 클라이언트 종료를 확인 한 후 종료 하십시오.
+ 정상적인 종료가 안 되었을 경우에는 작업 관리자를 통해 강제 종료 하십시오.
