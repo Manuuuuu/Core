@@ -1,5 +1,12 @@
 ﻿Neko5 Server Version: 1.0.0.6
 
+0. 롤 패치 되서 볼 안 됨
+	http://puu.sh/bABkP/6a218e8a59.rar <-	패치 전 롤 실행파일 링크임.
+	다운 받아서 롤 설치된 곳에 덮어주면 됨.
+	이미 패치된 롤 실행 파일은 백업 해 두었다가, 볼 패치 되면 그걸로 복원해서 쓰면 됨.
+	"C:\Riot Games\League of Legends\RADS\solutions\lol_game_client_sln\releases\0.0.1.55\deploy\League of Legends.exe"
+  원 글 링크 http://botoflegends.com/forum/topic/35777-hotfix-for-16914-minipatch/
+	
 1. Run?
  need .Net Frame Work 4.51 or latested version
  구글로 .Net 을 검색 하여	4.51 또는 그 상위 버전을 설치 하십시오.
