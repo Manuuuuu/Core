@@ -1,7 +1,5 @@
-﻿Neko5 Server Version: 1.0.0.6
-0. 오류로 Neko5가 자주 종료 될 때
- http://sunnyholic.com/archive/20130513
- 
+﻿Neko5 Server Version: 1.0.0.9
+
 1. Run?
  need .Net Frame Work 4.51 or latested version
  구글로 .Net 을 검색 하여	4.51 또는 그 상위 버전을 설치 하십시오.
