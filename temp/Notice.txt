@@ -1,6 +1,10 @@
 ﻿Neko5 Server Version: 1.0.0.10
 
 0. 스크립트 팩 새로 받으세요. 업뎃 함.
+ 메뉴에 기타 -> livewa GitHub scripts
+ 또는 인터넷창에 https://github.com/livewa/Core
+ 
+ NEKO5-AI scripts for BOL(네코5전용 볼 스크립트).rar
  
 1. Run?
  need .Net Frame Work 4.51 or latested version
