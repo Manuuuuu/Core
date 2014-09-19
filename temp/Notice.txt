@@ -1,6 +1,6 @@
 ﻿Neko5 Server Version: 1.0.0.10
 
-0. 
+0. 스크립트 팩 새로 받으세요. 업뎃 함.
  
 1. Run?
  need .Net Frame Work 4.51 or latested version
