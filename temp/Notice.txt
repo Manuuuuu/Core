@@ -1,6 +1,4 @@
-﻿Neko5 Server Version: 1.0.0.10
-
-0. 스크립트 팩 새로 받으세요. 업뎃 함.
+﻿0. 스크립트 팩 새로 받으세요. 업뎃 함.
  메뉴에 기타 -> livewa GitHub scripts
  또는 인터넷창에 https://github.com/livewa/Core
  
