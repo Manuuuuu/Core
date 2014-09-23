@@ -1,8 +1,7 @@
-﻿0. 스크립트 팩 새로 받으세요. 업뎃 함.
- 메뉴에 기타 -> livewa GitHub scripts
- 또는 인터넷창에 https://github.com/livewa/Core
- 
+﻿0. 볼 스튜디오용 NEKO5 전용 AI 스크립트 다운로드
+ 메뉴 -> 기타 -> livewa GitHub scripts (https://github.com/livewa/Core) 
  NEKO5-AI scripts for BOL(네코5전용 볼 스크립트).rar
+ 해당 파일 다운로드 받아서 볼 스튜디오 설치 폴더에 압축 해제.
  
 1. Run?
  need .Net Frame Work 4.51 or latested version
@@ -18,10 +17,10 @@
  
 4. obfuscated.lua Error?
  볼에서 서버 데이터를 못 가져와서 발생하는 에러입니다.
- 볼 자체 에러인데 왜 일어나는지 증상을 모르겠음. 아래 스샷 참고.
- http://screenshu.com/static/uploads/temporary/7o/kc/6j/rng4f1.jpg
- 증상 생기면 재접속 시도 중 뜨는데, 접속 종료 하고 롤 클라 닫고 다시 시작하는 걸 권함.
+ 볼 자체 에러로 인젝션을 동시(약 1 ~ 2초)에 할 경우, 
+ 늦게 인젝션 되는 롤 클라이언트에서 랜덤하게 발생 아래 스샷 참고.
+ (http://screenshu.com/static/uploads/temporary/7o/kc/6j/rng4f1.jpg)
  
- 
- 
- 
+ 해당 증상 생기면 재접속 시도 중이라는 메세지 및 에러 메세지가 지속적으로 뜨는데,
+ 접속 종료 후 롤 클라이언트를 작업 관리자에서 죽이고 다시 시작해야 함
+ 내버려 두면 탈주....함
