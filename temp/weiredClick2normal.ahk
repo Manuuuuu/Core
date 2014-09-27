@@ -9,14 +9,20 @@ menu,tray,Tip, weiredClick2normal-NEKO
 menu,tray,add, Quite
 ; Process, priority, %PIDS%, Low
 
-limitTime = 45
-WheelDown::If (A_TimeSincePriorHotkey < limitTime && !WheelUP)
-SendInput, {WheelDown}
-return
-WheelUP::If (A_TimeSincePriorHotkey < limitTime && !WheelDown)
-SendInput, {WheelUP}
-Return
+limitTime = 100
+; WheelDown::If (A_TimeSincePriorHotkey < limitTime && !WheelUP)
+; SendInput, {WheelDown}
+; return
+; WheelUP::If (A_TimeSincePriorHotkey < limitTime && !WheelDown)
+; SendInput, {WheelUP}
+; Return
 
+Mbutton:: If ( A_TimeSincePriorHotkey < limitTime ) 
+SendInput, {Mbutton Down} 
+return 
+Mbutton Up::
+SendInput, {MButton Up} 
+return
 
 ; MButton::
 ; If (A_TimeSincePriorHotkey < limitTime)

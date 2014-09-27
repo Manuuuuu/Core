@@ -1,9 +1,9 @@
 -- Change autoUpdate to false if you wish to not receive auto updates.
 -- Change silentUpdate to true if you wish not to receive any message regarding updates
-local autoUpdate   = false
+local autoUpdate   = true
 local silentUpdate = false
 
-local version = 1.058
+local version = 1.076
 
 --[[
 
@@ -51,16 +51,9 @@ local version = 1.058
 
 ]]
 
--- Temporary here until it's included in BoL itself
-if VIP_USER then
-    AddBugsplatCallback(function()
-        local p = CLoLPacket(0x9B)
-        p.dwArg1 = 1
-        p.dwArg2 = 0
-        p:Encode4(0)
-        SendPacket(p)
-    end)
-end
+-- Namespace by pqmailer, added for Prodiction support reasons
+-- Used for several things in the future, like menues etc.
+_G.srcLib = {}
 
 --[[
 
@@ -192,7 +185,7 @@ class 'SourceUpdater'
 function SourceUpdater:__init(scriptName, version, host, updatePath, filePath, versionPath)
 
     self.printMessage = function(message) if not self.silent then print("<font color=\"#6699ff\"><b>" .. self.UPDATE_SCRIPT_NAME .. ":</b></font> <font color=\"#FFFFFF\">" .. message .. "</font>") end end
-    self.getVersion = function(version) return tonumber(string.match(version, "%d+%.?%d*")) end
+    self.getVersion = function(version) return tonumber(string.match(version or "", "%d+%.?%d*")) end
 
     self.UPDATE_SCRIPT_NAME = scriptName
     self.UPDATE_HOST = host
@@ -239,6 +232,10 @@ function SourceUpdater:CheckUpdate()
         end
         if self.SERVER_VERSION then
             self.SERVER_VERSION = self.getVersion(self.SERVER_VERSION)
+            if not self.SERVER_VERSION then
+                print("SourceLib: Please contact the developer of the script \"" .. (GetCurrentEnv().FILE_NAME or "DerpScript") .. "\", since the auto updater returned an invalid version.")
+                return
+            end
             if self.FILE_VERSION < self.SERVER_VERSION then
                 self.printMessage("New version available: v" .. self.SERVER_VERSION)
                 self.printMessage("Updating, please don't press F9")
@@ -345,13 +342,30 @@ local spellNum = 1
 --[[
     New instance of Spell
 
-    @param spellId    | int   | Spell ID (_Q, _W, _E, _R)
-    @param range      | float | Range of the spell
-    @param packetCast | bool  | (optional) Enable packet casting
+    @param spellId    | int          | Spell ID (_Q, _W, _E, _R)
+    @param range      | float        | Range of the spell
+    @param packetCast | bool         | (optional) Enable packet casting
+    @param menu       | scriptCofnig | (Sub)Menu to add the spell casting menu to
 ]]
-function Spell:__init(spellId, range, packetCast)
+function Spell:__init(spellId, range, packetCast, menu)
 
     assert(spellId ~= nil and range ~= nil and type(spellId) == "number" and type(range) == "number", "Spell: Can't initialize Spell without valid arguments.")
+
+    if _G.srcLib.spellMenu == nil then
+        DelayAction(function(menu)
+            if _G.srcLib.spellMenu == nil and not _G.srcLib.informedOutdated and Prodiction then
+                if tonumber(Prodiction.GetVersion()) < 1.1 then
+                    print("<b></font> <font color=\"#FF0000\">Please update your Prodiction to at least version 1.1 if you want to use it with SourceLib!</font></b>")
+                    _G.srcLib.informedOutdated = true
+                else
+                    menu = menu or scriptConfig("[SourceLib] SpellClass", "srcSpellClass")
+                    menu:addParam("predictionType", "Prediction Type",     SCRIPT_PARAM_LIST, 1, { "VPrediction", "Prodiction" })
+                    _G.srcLib.spellMenu = menu
+                    print("SourceLib: Prodiction support enabled, but it's highly recommended to use VPrediction at the moment due to error spamming related to Prodiction!")
+                end
+            end
+        end, 3, { menu })
+    end
 
     self.spellId = spellId
     self:SetRange(range)
@@ -363,6 +377,16 @@ function Spell:__init(spellId, range, packetCast)
 
     self._spellNum = spellNum
     spellNum = spellNum + 1
+
+    -- VPredicion default
+    self.predictionType = 1
+
+    AddTickCallback(function()
+        -- Prodiction found, apply value
+        if _G.srcLib.spellMenu ~= nil then
+            self:SetPredictionType(_G.srcLib.spellMenu.predictionType)
+        end
+    end)
 
 end
 
@@ -461,6 +485,18 @@ function Spell:SetSkillshot(VP, skillshotType, width, delay, speed, collision)
 end
 
 --[[
+    Sets the prediction type
+
+    @param typeId | int | type ID (1 = VPrediction (default), 2 = Prodiction)
+]]
+function Spell:SetPredictionType(typeId)
+
+    assert(typeId and type(typeId) == 'number', 'Spell:SetPredictionType(): typeId is invalid!')
+    self.predictionType = typeId
+
+end
+
+--[[
     Set the AOE status of this spell, this can be changed later
 
     @param useAoe        | bool  | New AOE state
@@ -542,7 +578,7 @@ function Spell:Charge()
     assert(self.__charged, "Spell:Charge(): Spell is not defined as chargeable spell!")
 
     if not self:IsCharging() then
-        Packet("S_CAST", {spellId = self.spellId}):send()
+        CastSpell(self.spellId, mousePos.x, mousePos.z)
     end
 
 end
@@ -583,31 +619,84 @@ function Spell:ValidTarget(target, range)
 end
 
 --[[
-    Returns the prediction results from VPrediction to use for custom reasons
+    Returns the prediction results from VPrediction/Prodiction in a VPrediction result layout
 
-    @return | various data | The original result from VPrediction
+    @return | various data | Prediction result in VPrediction layout
 ]]
 function Spell:GetPrediction(target)
 
     if self.skillshotType ~= nil then
-        if self.skillshotType == SKILLSHOT_LINEAR then
-            if self.useAoe then
-                return self.VP:GetLineAOECastPosition(target, self.delay, self.radius, self.range, self.speed, self.sourcePosition)
-            else
-                return self.VP:GetLineCastPosition(target, self.delay, self.width, self.range, self.speed, self.sourcePosition, self.collision)
+        -- VPrediction
+        if self.predictionType == 1 then
+            if self.skillshotType == SKILLSHOT_LINEAR then
+                if self.useAoe then
+                    return self.VP:GetLineAOECastPosition(target, self.delay, self.radius, self.range, self.speed, self.sourcePosition)
+                else
+                    return self.VP:GetLineCastPosition(target, self.delay, self.width, self.range, self.speed, self.sourcePosition, self.collision)
+                end
+            elseif self.skillshotType == SKILLSHOT_CIRCULAR then
+                if self.useAoe then
+                    return self.VP:GetCircularAOECastPosition(target, self.delay, self.radius, self.range, self.speed, self.sourcePosition)
+                else
+                    return self.VP:GetCircularCastPosition(target, self.delay, self.width, self.range, self.speed, self.sourcePosition, self.collision)
+                end
+             elseif self.skillshotType == SKILLSHOT_CONE then
+                if self.useAoe then
+                    return self.VP:GetConeAOECastPosition(target, self.delay, self.radius, self.range, self.speed, self.sourcePosition)
+                else
+                    return self.VP:GetLineCastPosition(target, self.delay, self.width, self.range, self.speed, self.sourcePosition, self.collision)
+                end
             end
-        elseif self.skillshotType == SKILLSHOT_CIRCULAR then
+        -- Prodiction
+        elseif self.predictionType == 2 then
             if self.useAoe then
-                return self.VP:GetCircularAOECastPosition(target, self.delay, self.radius, self.range, self.speed, self.sourcePosition)
+                if self.skillshotType == SKILLSHOT_LINEAR then
+                    local pos, info, objects = Prodiction.GetLineAOEPrediction(target, self.range, self.speed, self.delay, self.radius, self.sourcePosition)
+                    local hitChance = self.collision and info.collision() and -1 or info.hitchance
+                    return pos, hitChance, #objects
+                elseif self.skillshotType == SKILLSHOT_CIRCULAR then
+                    local pos, info, objects = Prodiction.GetCircularAOEPrediction(target, self.range, self.speed, self.delay, self.radius, self.sourcePosition)
+                    local hitChance = self.collision and info.collision() and -1 or info.hitchance
+                    return pos, hitChance, #objects
+                 elseif self.skillshotType == SKILLSHOT_CONE then
+                    local pos, info, objects = Prodiction.GetConeAOEPrediction(target, self.range, self.speed, self.delay, self.radius, self.sourcePosition)
+                    local hitChance = self.collision and info.collision() and -1 or info.hitchance
+                    return pos, hitChance, #objects
+                end
             else
-                return self.VP:GetCircularCastPosition(target, self.delay, self.width, self.range, self.speed, self.sourcePosition, self.collision)
+                local pos, info = Prodiction.GetPrediction(target, self.range, self.speed, self.delay, self.width, self.sourcePosition)
+                local hitChance = self.collision and info.collision() and -1 or info.hitchance
+                return pos, hitChance, info.pos
             end
-         elseif self.skillshotType == SKILLSHOT_CONE then
-            if self.useAoe then
-                return self.VP:GetConeAOECastPosition(target, self.delay, self.radius, self.range, self.speed, self.sourcePosition)
-            else
-                return self.VP:GetLineCastPosition(target, self.delay, self.width, self.range, self.speed, self.sourcePosition, self.collision)
+
+            -- Someday it will look the same as with VPrediction ;D
+            --[[
+            if self.skillshotType == SKILLSHOT_LINEAR then
+                if self.useAoe then
+                    local pos, info, objects = Prodiction.GetLineAOEPrediction(target, self.range, self.speed, self.delay, self.radius, self.sourcePosition)
+                    return pos, self.collision and info.collision() and -1 or info.hitchance, type(objects) == "table" and #objects or 10
+                else
+                    local pos, info = Prodiction.GetPrediction(target, self.range, self.speed, self.delay, self.width, self.sourcePosition)
+                    return pos, self.collision and info.collision() and -1 or info.hitchance, info.pos
+                end
+            elseif self.skillshotType == SKILLSHOT_CIRCULAR then
+                if self.useAoe then
+                    local pos, info, objects = Prodiction.GetCircularAOEPrediction(target, self.range, self.speed, self.delay, self.radius, self.sourcePosition)
+                    return pos, self.collision and info.collision() and -1 or info.hitchance, type(objects) == "table" and #objects or 10
+                else
+                    local pos, info = Prodiction.GetPrediction(target, self.range, self.speed, self.delay, self.width, self.sourcePosition)
+                    return pos, self.collision and info.collision() and -1 or info.hitchance, info.pos
+                end
+             elseif self.skillshotType == SKILLSHOT_CONE then
+                if self.useAoe then
+                    local pos, info, objects = Prodiction.GetConeAOEPrediction(target, self.range, self.speed, self.delay, self.radius, self.sourcePosition)
+                    return pos, self.collision and info.collision() and -1 or info.hitchance, type(objects) == "table" and #objects or 10
+                else
+                    local pos, info = Prodiction.GetPrediction(target, self.range, self.speed, self.delay, self.width, self.sourcePosition)
+                    return pos, self.collision and info.collision() and -1 or info.hitchance, info.pos
+                end
             end
+            ]]
         end
     end
 
@@ -734,6 +823,9 @@ function Spell:Cast(param1, param2)
             end
         end
 
+        -- Validation (for Prodiction)
+        if not castPosition then return SPELLSTATE_NOT_TRIGGERED end
+
         -- AOE not enough targets
         if nTargets and nTargets < self.minTargetsAoe then return SPELLSTATE_NOT_ENOUGH_TARGETS end
 
@@ -750,6 +842,18 @@ function Spell:Cast(param1, param2)
         param2 = castPosition.z
     end
 
+    -- Cast charged spell
+    if param1 ~= nil and param2 ~= nil and self.__charged and self:IsCharging() then
+        local p = CLoLPacket(230)
+        p:EncodeF(player.networkID)
+        p:Encode1(0x80)
+        p:EncodeF(param1)
+        p:EncodeF(0)
+        p:EncodeF(param2)
+        SendPacket(p)
+        return SPELLSTATE_TRIGGERED
+    end
+
     -- Cast the spell
     return self:__Cast(param1, param2)
 
@@ -762,7 +866,11 @@ function Spell:__Cast(param1, param2)
 
     if self.packetCast then
         if param1 ~= nil and param2 ~= nil then
-            Packet("S_CAST", {spellId = self.spellId, toX = param1, toY = param2, fromX = param1, fromY = param2}):send()
+            if type(param1) ~= "number" and type(param2) ~= "number" and VectorType(param1) and VectorType(param2) then
+                Packet("S_CAST", {spellId = self.spellId, toX = param2.x, toY = param2.z, fromX = param1.x, fromY = param1.z}):send()
+            else
+                Packet("S_CAST", {spellId = self.spellId, toX = param1, toY = param2, fromX = param1, fromY = param2}):send()
+            end
         elseif param1 ~= nil then
             Packet("S_CAST", {spellId = self.spellId, toX = param1.x, toY = param1.z, fromX = param1.x, fromY = param1.z, targetNetworkId = param1.networkID}):send()
         else
@@ -770,7 +878,11 @@ function Spell:__Cast(param1, param2)
         end
     else
         if param1 ~= nil and param2 ~= nil then
-            CastSpell(self.spellId, param1, param2)
+            if type(param1) ~= "number" and type(param2) ~= "number" and VectorType(param1) and VectorType(param2) then
+                Packet("S_CAST", {spellId = self.spellId, toX = param2.x, toY = param2.z, fromX = param1.x, fromY = param1.z}):send()
+            else
+                CastSpell(self.spellId, param1, param2)
+            end
         elseif param1 ~= nil then
             CastSpell(self.spellId, param1)
         else
@@ -1011,7 +1123,7 @@ function Spell:OnSendPacket(p)
 
     -- Charged spells
     if self.__charged then
-        if p.header == 229 then
+        if p.header == 230 then
             if os.clock() - self.__charged_castTime <= 0.1 then
                 p:Block()
             end
@@ -1020,7 +1132,7 @@ function Spell:OnSendPacket(p)
             if packet:get("spellId") == self.spellId then
                 if os.clock() - self.__charged_castTime <= self.__charged_duration then
                     self:_AbortCharge()
-                    local newPacket = CLoLPacket(229)
+                    local newPacket = CLoLPacket(230)
                     newPacket:EncodeF(player.networkID)
                     newPacket:Encode1(0x80)
                     newPacket:EncodeF(mousePos.x)
@@ -1374,9 +1486,18 @@ function _Circle:Draw()
 
     -- Update values if linked spell is given
     if self._linkedSpell then
-        if self._linkedSpellReady and not self._linkedSpell:IsReady() then return end
-        -- Update the radius with the spell range
-        self.radius = self._linkedSpell.range
+        -- Temporary error prevention
+        if not self._linkedSpell.IsReady then
+            if not _G.SourceLibLinkedSpellInformed then
+                _G.SourceLibLinkedSpellInformed = true
+                print("SourceLib: The script \"" .. GetCurrentEnv().FILE_NAME .. "\" is causing issues with circle drawing. Please contact he developer of the named script so he fixes the issue, thanks.")
+            end
+            return
+        else
+            if self._linkedSpellReady and not self._linkedSpell:IsReady() then return end
+            -- Update the radius with the spell range
+            self.radius = self._linkedSpell.range
+        end
     end
 
     -- Menu found
@@ -1571,13 +1692,13 @@ function DamageLib:GetTrueDamage(target, spell, damagetype, basedamage, perlevel
     end
 
     if damagetype == _MAGIC then
-        return self.Magic_damage_m * self.source:CalcMagicDamage(target, basedamage + perlevel * self.source:GetSpellData(spell).level + extra(target)) + ScalingDamage
+        return self.Magic_damage_m * self.source:CalcMagicDamage(target, basedamage + perlevel * (spell < 4 and self.source:GetSpellData(spell).level or 0) + extra(target)) + ScalingDamage
     end
     if damagetype == _PHYSICAL then
-        return self.Physical_damage_m * self.source:CalcDamage(target, basedamage + perlevel * self.source:GetSpellData(spell).level + extra(target)) + ScalingDamage
+        return self.Physical_damage_m * self.source:CalcDamage(target, basedamage + perlevel * (spell < 4 and self.source:GetSpellData(spell).level or 0) + extra(target)) + ScalingDamage
     end
     if damagetype == _TRUE then
-        return basedamage + perlevel * self.source:GetSpellData(spell).level + extra(target) + ScalingDamage
+        return basedamage + perlevel * (spell < 4 and self.source:GetSpellData(spell).level or 0) + extra(target) + ScalingDamage
     end
 
     return 0
@@ -2629,6 +2750,43 @@ GameHandler = _GameHandler()
     Util - Just utils.
 ]]
 
+SUMMONERS_RIFT   = { 1, 2 }
+PROVING_GROUNDS  = 3
+TWISTED_TREELINE = { 4, 10 }
+CRYSTAL_SCAR     = 8
+HOWLING_ABYSS    = 12
+
+function IsMap(map)
+
+    assert(map and (type(map) == "number" or type(map) == "table"), "IsMap(): map is invalid!")
+    if type(map) == "number" then
+        return GetGame().map.index == map
+    else
+        for _, id in ipairs(map) do
+            if GetGame().map.index == id then return true end
+        end
+    end
+
+end
+
+function GetMapName()
+
+    if IsMap(SUMMONERS_RIFT) then
+        return "Summoners Rift"
+    elseif IsMap(CRYSTAL_SCAR) then
+        return "Crystal Scar"
+    elseif IsMap(HOWLING_ABYSS) then
+        return "Howling Abyss"
+    elseif IsMap(TWISTED_TREELINE) then
+        return "Twisted Treeline"
+    elseif IsMap(PROVING_GROUNDS) then
+        return "Proving Grounds"
+    else
+        return "Unknown map"
+    end
+
+end
+
 function ProtectTable(t)
 
     local proxy = {}
@@ -2833,7 +2991,7 @@ function TARGB(colorTable)
 end
 
 function PingClient(x, y, pingType)
-    Packet("R_PING", {x = y, y = y, type = pingType and pingType or PING_FALLBACK}):receive()
+    Packet("R_PING", {x = x, y = y, type = pingType and pingType or PING_FALLBACK}):receive()
 end
 
 local __util_autoAttack   = { "frostarrow" }
@@ -2872,9 +3030,11 @@ function TableDeepCopy(orig)
     if orig_type == 'table' then
         copy = {}
         for orig_key, orig_value in next, orig, nil do
-            copy[deepcopy(orig_key)] = deepcopy(orig_value)
+            copy[TableDeepCopy(orig_key)] = TableDeepCopy(orig_value)
         end
-        setmetatable(copy, deepcopy(getmetatable(orig)))
+        setmetatable(copy, TableDeepCopy(getmetatable(orig)))
+    elseif orig_type == "Vector" then
+        copy = orig:clone()
     else -- number, string, boolean, etc
         copy = orig
     end
@@ -2897,7 +3057,7 @@ end
 
 -- Update script
 if autoUpdate then
-    SourceUpdater("SourceLib", version, "raw.github.com", "/LegendBot/Scripts/master/Common/SourceLib.lua", LIB_PATH .. "SourceLib.lua", "/LegendBot/Scripts/master/Common/Versions/SourceLib.version"):SetSilent(silentUpdate):CheckUpdate()
+    SourceUpdater("SourceLib", version, "raw.github.com", "/TheRealSource/public/master/common/SourceLib.lua", LIB_PATH .. "SourceLib.lua", "/TheRealSource/public/master/common/SourceLib.version"):SetSilent(silentUpdate):CheckUpdate()
 end
 
 -- Set enemy bar data
@@ -2913,3 +3073,6 @@ _EXHAUST = GetSummonerSlot("SummonerExhaust")
 --Others
 _AA = 10000
 _PASIVE = 10001
+
+-- Temp fix for Prodiction
+DelayAction(function() LoadProtectedScript('VjUzEzdFTURpN0NFYN50TGhvRUxAbTNLRXlNeE9CZUVMRm1zS155TXlRsm/FSgAtMw3FOU0+hrJlWExBbCRLTPkLeAdy4wQNQK0yy0TvjHhFL+RFTRtsM0tSOUr5ALMkRQtBrzHNBDhNuUfyZNONQW7yCkd5EPjGc20FTcMrsgpFNYy7RLNkRkwd7LNKTTlM/ADzJEUAAa4xFgR5TD/HMGUJzYNvbspFeAG4hXCkREhAbHFPRa9M+0Uv5MVNG2wzS1K5TfkA8yFF6UFtMxYEeUxmRvJlZ8xAbZBLswZSecZydkVMQGk6S0V5GzAWLTAWCRJtN01FeU0JJxsXNkxEbjNLRSYKeUJ+ZUVMJQNFIjcWIxQjHBFFSEptM0sDECEcAwoMNjhAaT9LRXkeOhQ7NRETECxnA0V9RHlGciMsICUiQy4reUl6RnJlLCNAaTZLRXkiCSMcZUFOQG0zOUV9RnlGciMsICU+RzksFyp5QndlRUwyCFIvRX1OeUZyTyRMRGszS0UaIRY1F2VBSkBtMycqDigLRnZgRUxAC1olIXlJf0ZyZWpjLAlSS0FyTXlGBgQ2Y29dHScwGE19UHJlRQ0kCWAuKx0dGCUZADEPIQFfKSQaJnlHcmVFREBtM0NFeU14RnFsRUxAKjMLRf8NOUb15QVNx61zSl35zXlRMmXFAEAsMxYFeUxmRvJlQExAbTdMRXlNESMTASA+QGk0S0V5HRglGQAxTERlM0tFESgYIhcXNkxEajNLRSoSOgchMUVIRm0zSwcVIhotcmVFTEBsM0tFeU15RnJlRUxAbTNLRXlNeUZyZEVMQGwzS0V5TXlGcmVFTEBtM0tFeQ==5B5AAAA59AF52BAFE7CD9B29EDD5C17B') end, 120)

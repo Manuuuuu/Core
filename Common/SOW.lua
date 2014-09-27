@@ -1,13 +1,13 @@
-local version = "1.129"
-local AUTOUPDATE = false
+local version = "1.1301"
+local AUTOUPDATE = true
 local UPDATE_HOST = "raw.github.com"
-local UPDATE_PATH = "/LegendBot/Scripts/master/Common/SOW.lua".."?rand="..math.random(1,10000)
+local UPDATE_PATH = "/Hellsing/BoL/master/common/SOW.lua".."?rand="..math.random(1,10000)
 local UPDATE_FILE_PATH = LIB_PATH.."SOW.lua"
 local UPDATE_URL = "https://"..UPDATE_HOST..UPDATE_PATH
 
 function _AutoupdaterMsg(msg) print("<font color=\"#6699ff\"><b>SOW:</b></font> <font color=\"#FFFFFF\">"..msg..".</font>") end
 if AUTOUPDATE then
-	local ServerData = GetWebResult(UPDATE_HOST, "/LegendBot/Scripts/master/Common/Versions/SOW.version")
+	local ServerData = GetWebResult(UPDATE_HOST, "/Hellsing/BoL/master/version/SOW.version")
 	if ServerData then
 		ServerVersion = type(tonumber(ServerData)) == "number" and tonumber(ServerData) or nil
 		if ServerVersion then
@@ -39,7 +39,7 @@ function SOW:__init(VP)
 	self.DataUpdated = false
 
 	self.VP = VP
-
+	
 	--Callbacks
 	self.AfterAttackCallbacks = {}
 	self.OnAttackCallbacks = {}
@@ -84,13 +84,14 @@ function SOW:__init(VP)
 			["cassiopeia"] = _E,
 			["garen"] = _Q,
 			["khazix"] = _Q,
+			["gnar"] = _E
 		}
 
 	self.LastAttack = 0
 	self.EnemyMinions = minionManager(MINION_ENEMY, 2000, myHero, MINION_SORT_MAXHEALTH_ASC)
 	self.JungleMinions = minionManager(MINION_JUNGLE, 2000, myHero, MINION_SORT_MAXHEALTH_DEC)
 	self.OtherMinions = minionManager(MINION_OTHER, 2000, myHero, MINION_SORT_HEALTH_ASC)
-
+	
 	GetSave("SOW").FarmDelay = GetSave("SOW").FarmDelay and GetSave("SOW").FarmDelay or 0
 	GetSave("SOW").ExtraWindUpTime = GetSave("SOW").ExtraWindUpTime and GetSave("SOW").ExtraWindUpTime or 50
 	GetSave("SOW").Mode3 = GetSave("SOW").Mode3 and GetSave("SOW").Mode3 or string.byte("X")
@@ -117,11 +118,11 @@ function SOW:LoadToMenu(m, STS)
 		self.STS = STS
 		self.STS.VP = self.VP
 	end
-
+	
 	self.Menu:addParam("Enabled", "Enabled", SCRIPT_PARAM_ONOFF, true)
 	self.Menu:addParam("FarmDelay", "Farm Delay", SCRIPT_PARAM_SLICE, -150, 0, 150)
 	self.Menu:addParam("ExtraWindUpTime", "Extra WindUp Time", SCRIPT_PARAM_SLICE, -150,  0, 150)
-
+	
 	self.Menu.FarmDelay = GetSave("SOW").FarmDelay
 	self.Menu.ExtraWindUpTime = GetSave("SOW").ExtraWindUpTime
 
@@ -143,7 +144,7 @@ function SOW:LoadToMenu(m, STS)
 	self.Menu._param[self.Mode2ParamID].key = GetSave("SOW").Mode2
 	self.Menu._param[self.Mode1ParamID].key = GetSave("SOW").Mode1
 	self.Menu._param[self.Mode0ParamID].key = GetSave("SOW").Mode0
-
+	
 	AddTickCallback(function() self:OnTick() end)
 	AddTickCallback(function() self:CheckConfig() end)
 end
@@ -270,12 +271,15 @@ function SOW:OrbWalk(target, point)
 		self:Attack(target)
 	elseif self:CanMove() and self.Move then
 		if not point then
-			local OBTarget = GetTarget()
+			local OBTarget = GetTarget() or target
 			if self.Menu.Mode == 1 or not OBTarget then
 				local Mv = Vector(myHero) + 400 * (Vector(mousePos) - Vector(myHero)):normalized()
 				self:MoveTo(Mv.x, Mv.z)
-			elseif GetDistanceSqr(OBTarget) > 50*50 then
+			elseif GetDistanceSqr(OBTarget) > 100*100 + math.pow(self.VP:GetHitBox(OBTarget), 2) then
 				local point = self.VP:GetPredictedPos(OBTarget, 0, 2*myHero.ms, myHero, false)
+				if GetDistanceSqr(point) < 100*100 + math.pow(self.VP:GetHitBox(OBTarget), 2) then
+					point = Vector(Vector(myHero) - point):normalized() * 50
+				end
 				self:MoveTo(point.x, point.z)
 			end
 		else
@@ -562,7 +566,7 @@ function SOW:Farm(mode, point)
 				target = self:ValidStuff()
 			end
 			self.lasttarget = target
-
+			
 			self:OrbWalk(target, point)
 		else
 			self:OrbWalk(nil, point)
