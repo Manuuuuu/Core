@@ -1,4 +1,5 @@
 ﻿0. 볼 스튜디오용 NEKO5 전용 AI 스크립트 다운로드
+ 소라카 업데이트 및 라이브러리 업데이트 함. 
  메뉴 -> 기타 -> livewa GitHub scripts (https://github.com/livewa/Core) 
  NEKO5-AI scripts for BOL(네코5전용 볼 스크립트).rar
  해당 파일 다운로드 받아서 볼 스튜디오 설치 폴더에 압축 해제.
