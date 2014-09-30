@@ -87,13 +87,8 @@ regions = {
 	midRightJungeGate1		 = Polygon(Point(4157, 3680),  Point(10610, 10067), Point(11245, 9763),   Point(4493, 3029)),
 	botRightJungeGate1		 = Polygon(Point(11600, 4482),  Point(12017, 9621), Point(12609, 9565),   Point(12630, 3998)),
 	topRightJungeGate1		 = Polygon(Point(3287, 12641),  Point(9341, 12862), Point(9507, 11603),   Point(3380, 10830)),
-
 	BaronHuntingPoint1		 = Polygon(Point(3248, 9706),  Point(4541, 10700), Point(5041, 10171),   Point(4290, 8873)),
-	DragonHuntingPoint1		 = Polygon(Point(8946, 4018),  Point(9684, 3719), Point(10620, 4499),   Point(9502, 5379)),
-	
-	
-	
-	
+	DragonHuntingPoint1		 = Polygon(Point(8946, 4018),  Point(9684, 3719), Point(10620, 4499),   Point(9502, 5379)),	
 	topLeftOuterJungle     = Polygon(Point(1477, 4747),  Point(1502, 11232), Point(5951, 7201),   Point(3169, 4379)),
 	topLeftInnerJungle     = Polygon(Point(3090, 5144),  Point(2071, 5398),  Point(2088, 10702),  Point(5439, 7665)),
 	topOuterRiver          = Polygon(Point(5951, 7201),  Point(1502, 11232), Point(2883, 12752),  Point(7001, 7957)),
@@ -447,7 +442,7 @@ class 'SpatialHashMap' -- {
 		end
 	end
 -- }
-class 'MapPosition' -- {
+class 'MapPosition'
 	function MapPosition:__init()
 		self.wallSpatialHashMap = SpatialHashMap(walls, 400, "walls_1_1")
 	end
@@ -563,55 +558,7 @@ class 'MapPosition' -- {
 	function MapPosition:BotLeftLane(unit)
 		unitPoint = Point(unit.x, unit.z)
 		return regions["leftBotLane"]:contains(unitPoint) 
-	end
-
-	--[[ 
-	function MapPosition:onLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return MapPosition:onTopLane(unit) or MapPosition:onMidLane(unit) or MapPosition:onBotLane(unit) 
-	end
-	function MapPosition:onTopLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["leftTopLane"]:contains(unitPoint) or regions["centerTopLane"]:contains(unitPoint) or regions["rightTopLane"]:contains(unitPoint) 	
-	end
-	function MapPosition:TopCenterLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["centerTopLane"]:contains(unitPoint) 
-	end
-	function MapPosition:TopRightLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return  regions["rightTopLane"]:contains(unitPoint)	
-	end
-	function MapPosition:onMidLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["leftMidLane"]:contains(unitPoint) or regions["centerMidLane"]:contains(unitPoint) or regions["rightMidLane"]:contains(unitPoint) 
-		end
-	function MapPosition:onRightMidLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["centerMidLane"]:contains(unitPoint) or regions["rightMidLane"]:contains(unitPoint)	
-	end
-	function MapPosition:MidCenterLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["centerMidLane"]:contains(unitPoint) 
-	end
-	function MapPosition:MidRightLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["rightMidLane"]:contains(unitPoint) 
-	end
-	function MapPosition:onBotLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["leftBotLane"]:contains(unitPoint) or regions["centerBotLane"]:contains(unitPoint) or regions["rightBotLane"]:contains(unitPoint) 
-	end
-	function MapPosition:BotCenterLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["centerBotLane"]:contains(unitPoint) 
-	end
-	function MapPosition:BotRightLane(unit)
-		unitPoint = Point(unit.x, unit.z)
-		return regions["rightBotLane"]:contains(unitPoint) 
-	end 
-	]]
-	
+	end	
 	-- Jungle Positions -------------------------------------------------------
 	function MapPosition:inJungle(unit)
 		return MapPosition:inLeftJungle(unit) or MapPosition:inRightJungle(unit)
@@ -720,5 +667,3 @@ class 'MapPosition' -- {
 	function MapPosition:DragonHuntingPoint1(unit)
 		return regions["DragonHuntingPoint1"]:contains(Point(unit.x, unit.z))	
 	end	
-	
--- }
