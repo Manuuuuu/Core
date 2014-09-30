@@ -1,27 +1,17 @@
-﻿0. 볼 스튜디오용 NEKO5 전용 AI 스크립트 다운로드
- 소라카 업데이트 및 라이브러리 업데이트 함. 
- 메뉴 -> 기타 -> livewa GitHub scripts (https://github.com/livewa/Core) 
- NEKO5-AI scripts for BOL(네코5전용 볼 스크립트).rar
- 해당 파일 다운로드 받아서 볼 스튜디오 설치 폴더에 압축 해제.
- 
+﻿
+
 1. Run?
- need .Net Frame Work 4.51 or latested version
- 구글로 .Net 을 검색 하여	4.51 또는 그 상위 버전을 설치 하십시오.
+ need .Net Frame Work 4.51 or latested version 
  http://www.microsoft.com/ko-KR/download/details.aspx?id=42643
 
 2. Donator?
- NekoSeed.txt 을 첨부 하여 메일을 보내십시오.
+ mail to me, with attached 'NekoSeed.txt'
  
 3. Exit?
- 모든 롤 클라이언트 종료를 확인 한 후 종료 하십시오.
- 정상적인 종료가 안 되었을 경우에는 작업 관리자를 통해 강제 종료 하십시오.
+ use trayIcon.
  
 4. obfuscated.lua Error?
- 볼에서 서버 데이터를 못 가져와서 발생하는 에러입니다.
- 볼 자체 에러로 인젝션을 동시(약 1 ~ 2초)에 할 경우, 
- 늦게 인젝션 되는 롤 클라이언트에서 랜덤하게 발생 아래 스샷 참고.
- (http://screenshu.com/static/uploads/temporary/7o/kc/6j/rng4f1.jpg)
- 
- 해당 증상 생기면 재접속 시도 중이라는 메세지 및 에러 메세지가 지속적으로 뜨는데,
- 접속 종료 후 롤 클라이언트를 작업 관리자에서 죽이고 다시 시작해야 함
- 내버려 두면 탈주....함
+ It's same time Injection bug from BoL. 
+ Injection time in between 1~2 sec then latest injection is fail
+ see below screen shot
+ http://screenshu.com/static/uploads/temporary/7o/kc/6j/rng4f1.jpg
