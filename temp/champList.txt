@@ -1,1 +1,2 @@
-﻿Soraka, Morgana, Zilean, Caitylin, Taric, Ashe, Annie, Sivir, Lux, BlitzCrank, Katarina
+
+Annie, Ashe, BlitzCrank, Caitylin, Cassiopeia, Katarina, Lux, Morgana, Sivir, Soraka, Taric, Zilean.
