@@ -1,37 +1,56 @@
-local version = "13"
 local SCRIPT_NAME = "FreakingGoodEvade"
+local MAJORVERSION = 1
+local SUBVERSION = 10151413 
 --{ UPDATE
-local AutoUpdate = true
-local SELF = SCRIPT_PATH..GetCurrentEnv().FILE_NAME
+local AUTOUPDATE = true 
+local PATH = SCRIPT_PATH..GetCurrentEnv().FILE_NAME
 local URL = "https://raw.githubusercontent.com/livewa/Core/master/FreakingGoodEvade.lua"
-local UPDATE_TMP_FILE = LIB_PATH.."FGETmp.txt"
+local UPDATE_TEMP_FILE = LIB_PATH.."FreakingGoodEvade.txt"
 local versionmessage = "<font color=\"#81BEF7\" >-----------------------</font>"
 function UpdateCallback()
-	file = io.open(UPDATE_TMP_FILE, "rb")
+	file = io.open(UPDATE_TEMP_FILE, "rb")
 	if file ~= nil then
 		content = file:read("*all")
 		file:close()
-		os.remove(UPDATE_TMP_FILE)
-		if content then
-			tmp, sstart = string.find(content, "local version = \"")
-			if sstart then
-				send, tmp = string.find(content, "\"", sstart+1)
-			end
-			if send then
-				Version = tonumber(string.sub(content, sstart+1, send-1))
-			end
-			if (Version ~= nil) and (Version > tonumber(version)) and content:find("--EOS--") then
-				file = io.open(SELF, "w")
-				if file then
+		os.remove(UPDATE_TEMP_FILE)		
+		if content then		
+			local update_MAJORVERSION = string.match(string.match(content, "local MAJORVERSION = %d+"), "%d+")
+			local update_SUBVERSION = string.match(string.match(content, "local SUBVERSION = %d+"), "%d+")
+			local update_VERSION = tostring(update_MAJORVERSION) .. "." .. tostring(update_SUBVERSION)
+			update_MAJORVERSION = tonumber(string.format("%d", update_MAJORVERSION))
+			update_SUBVERSION = tonumber(string.format("%d", update_SUBVERSION))
+			if (update_MAJORVERSION and update_SUBVERSION) and (update_MAJORVERSION > MAJORVERSION or (update_MAJORVERSION == MAJORVERSION and update_SUBVERSION > SUBVERSION)) and content:find("NEKO") then
+				file = io.open(PATH, "w")
+				if file ~= nil then
 					file:write(content)
 					file:flush()
 					file:close()
-					PrintChat("<font color=\"#81BEF7\" >FreakingGoodEvade:</font> <font color=\"#00FF00\">Successfully updated to: v"..Version..". Please reload the script with F9.</font>")
+					if Locale == "ko_KR" then
+						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v" .. update_VERSION .. "로 업데이트 되었습니다. 리로드 해 주세요. v</font>")
+						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">업데이트 메세지: " .. UPDATE_CHANGE_LOG .. "</font>")
+					else
+						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v" .. update_VERSION .. " updated. reload pleas,</font>")
+						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">Update message: " .. UPDATE_CHANGE_LOG .. "</font>")					
+					end
 				else
-					PrintChat("<font color=\"#81BEF7\" >FreakingGoodEvade:</font> <font color=\"#FF0000\">Error updating to new version (v"..Version..")</font>")
+					if Locale == "ko_KR" then
+						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#FF0000\">v" .. update_VERSION .. "로 업데이트 실패.</font>")
+					else
+						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#FF0000\">v" .. update_VERSION .. " update failed.</font>")
+					end
 				end
-			elseif (Version ~= nil) and (Version == tonumber(version)) then
-				-- PrintChat("<font color=\"#81BEF7\" >FreakingGoodEvade:</font> <font color=\"#00FF00\">No updates found, latest version: v"..Version.." </font>")
+			elseif (update_MAJORVERSION and update_SUBVERSION) and (update_MAJORVERSION == MAJORVERSION and update_SUBVERSION == SUBVERSION) then
+				if Locale == "ko_KR" then
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">업데이트 사항이 없습니다.</font>")
+				else
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">No updates. It's lastest version</font>")
+				end
+			elseif (update_MAJORVERSION  and update_SUBVERSION) then
+				if Locale == "ko_KR" then
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">최신 버전이 이미 인스톨 되어 있습니다. v"..update_VERSION.."이 있지만 다운 받지 않습니다.</font>")
+				else
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v"..update_VERSION.." is exist, but already installed new version.</font>")
+				end
 			end
 		end
 	end
@@ -118,7 +137,7 @@ champions2 = {
 		["Zenith Blade"]            = {name = "LeonaZenithBlade", 		spellName = "LeonaZenithBlade", spellDelay = 250, projectileName = "Leona_ZenithBlade_mis.troy", projectileSpeed = 2000, range = 950, radius = 110, type = "line", cc = "true", collision = "false", shieldnow = "true"},
 		["Leona Solar Flare"]       = {name = "LeonaSolarFlare", 			spellName = "LeonaSolarFlare", spellDelay = 250, projectileName = "Leona_SolarFlare_cas.troy", projectileSpeed = 1500, range = 1200, radius = 300, type = "circular", cc = "true", collision = "false", shieldnow = "true"}}},
 	["Karthus"]                  = {charName = "Karthus", skillshots = {
-		["Lay Waste"]               = {name = "LayWaste", 						spellName = "KarthusLayWasteA", spellDelay = 250, projectileName = "Karthus_Base_Q_Point_red.troy", projectileSpeed = 1750, range = 875, radius = 140, type = "circular", cc = "false", collision = "false", shieldnow = "true"}}},
+		["Lay Waste"]               = {name = "LayWaste", 						spellName = "KarthusLayWasteA", spellDelay = 250, projectileName = "Karthus_Base_Q_Point_red.troy", projectileSpeed = 20, range = 875, radius = 450, type = "circular", cc = "false", collision = "false", shieldnow = "true"}}},
 	["Chogath"]                  = {charName = "Chogath", skillshots = {
 		["Rupture"]                 = {name = "Rupture", 							spellName = "Rupture", spellDelay = 0, projectileName = "rupture_cas_01_red_team.troy", projectileSpeed = 950, range = 950, radius = 250, type = "circular", cc = "true", collision = "false", shieldnow = "true"}}},
 	["Blitzcrank"]               = {charName = "Blitzcrank", skillshots = {
@@ -1795,7 +1814,7 @@ function OnLoad()
 	GoodEvadeConfig.dodgeEnabled = true
 	currentbuffer = GoodEvadeConfig.evadeBuffer
 	-- PrintChat(versionmessage)
-	if AutoUpdate then
+	if AUTOUPDATE then
 		DelayAction(Update, 3)
 	end
 end
