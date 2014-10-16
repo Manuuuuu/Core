@@ -1,13 +1,29 @@
+--NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 10151413 
---{ UPDATE
+local SUBVERSION = 10161920 
+--{ UPDATE MODULE
+-------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
-local PATH = SCRIPT_PATH..GetCurrentEnv().FILE_NAME
-local URL = "https://raw.githubusercontent.com/livewa/Core/master/FreakingGoodEvade.lua"
-local UPDATE_TEMP_FILE = LIB_PATH.."FreakingGoodEvade.txt"
-local versionmessage = "<font color=\"#81BEF7\" >-----------------------</font>"
-function UpdateCallback()
+local Locale = GetLocalization() --ko_KR
+local versionmessage = " "
+local UPDATE_CHANGE_LOG
+if Locale == "ko_KR" then 
+	versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.."이 로드 되었습니다.</font>"
+	UPDATE_CHANGE_LOG = "--------------------------------------"
+else
+	versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.." loaded.</font>"
+	UPDATE_CHANGE_LOG = "--------------------------------------"
+end 
+-------------------------------------------------------------------------------------------------------------
+local VERSION = tostring(MAJORVERSION) .. "." .. tostring(SUBVERSION)
+local Client	= os.getenv('APPDATA')
+local update_file = Client.."\\LolClient\\ssssssssss"
+local PATH 				= BOL_PATH.."Scripts\\FreakingGoodEvade.lua"
+local URL					= "https://raw.githubusercontent.com/livewa/Core/master/FreakingGoodEvade.lua"
+local UPDATE_TEMP_FILE = Client.."\\LolClient\\tempforNeko"
+-------------------------------------------------------------------------------------------------------------
+function Update()
 	file = io.open(UPDATE_TEMP_FILE, "rb")
 	if file ~= nil then
 		content = file:read("*all")
@@ -480,9 +496,6 @@ hitboxTable = {
 		['Nidalee_Cougar'] = 65
 	}
 --}
-function Update()
-	DownloadFile(URL, UPDATE_TMP_FILE, UpdateCallback)
-end
 function getHitBoxRadius(target)
 	return GetDistance(target, target.minBBox)/2
 end
@@ -1814,9 +1827,7 @@ function OnLoad()
 	GoodEvadeConfig.dodgeEnabled = true
 	currentbuffer = GoodEvadeConfig.evadeBuffer
 	-- PrintChat(versionmessage)
-	if AUTOUPDATE then
-		DelayAction(Update, 3)
-	end
+	if AUTOUPDATE then DownloadFile(URL, UPDATE_TMP_FILE, UpdateCallback) end
 end
 function haveShieldThenUse()
 	if isSivir then CastSpell(_E) 
