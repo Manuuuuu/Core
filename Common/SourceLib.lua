@@ -1,6 +1,6 @@
 -- Change autoUpdate to false if you wish to not receive auto updates.
 -- Change silentUpdate to true if you wish not to receive any message regarding updates
-local autoUpdate   = true
+local autoUpdate   = false
 local silentUpdate = false
 
 local version = 4.182 -- 1.2 by dienofail to fix bilbao's fix of other people's fix of honda's stuff
