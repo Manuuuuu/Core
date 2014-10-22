@@ -60,7 +60,7 @@ FAQ:
 
 5. ETC
 
-5.1. 
+5.1. HWID reset for only NEKO donator, it need 2 donation.
 
 5.2. ARAM, Dominion, Twist Map are not yet official support.
 
