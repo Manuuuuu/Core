@@ -1,7 +1,7 @@
 --NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 10181959 
+local SUBVERSION = 10291949 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1495,7 +1495,7 @@ function OnSendPacket(p)
 						lastMovement.type = packet:get('type')
 						lastMovement.targetId = packet:get('targetNetworkId')
 						lastnonattack = GetTickCount()
-						elseif lastnonattack + 1000 < GetTickCount() then
+					elseif lastnonattack + 1000 < GetTickCount() then
 						lastMovement.destination = Point2(packet:get('x'), packet:get('y'))
 						lastMovement.type = packet:get('type')
 						lastMovement.targetId = packet:get('targetNetworkId')
