@@ -1,20 +1,13 @@
 --NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 10291949 
+local SUBVERSION = 10301603 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
 local Locale = GetLocalization() --ko_KR
-local versionmessage = " "
+local versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.." loaded.</font>"
 local UPDATE_CHANGE_LOG
-if Locale == "ko_KR" then 
-	versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.."이 로드 되었습니다.</font>"
-	UPDATE_CHANGE_LOG = "--------------------------------------"
-else
-	versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.." loaded.</font>"
-	UPDATE_CHANGE_LOG = "--------------------------------------"
-end 
 -------------------------------------------------------------------------------------------------------------
 local VERSION = tostring(MAJORVERSION) .. "." .. tostring(SUBVERSION)
 local Client	= os.getenv('APPDATA')
@@ -41,32 +34,15 @@ function Update()
 					file:write(content)
 					file:flush()
 					file:close()
-					if Locale == "ko_KR" then
-						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v" .. update_VERSION .. "로 업데이트 되었습니다. 리로드 해 주세요. v</font>")
-						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">업데이트 메세지: " .. UPDATE_CHANGE_LOG .. "</font>")
-					else
-						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v" .. update_VERSION .. " updated. reload pleas,</font>")
-						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">Update message: " .. UPDATE_CHANGE_LOG .. "</font>")					
-					end
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v" .. update_VERSION .. " updated. reload pleas,</font>")
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">Update message: " .. UPDATE_CHANGE_LOG .. "</font>")					
 				else
-					if Locale == "ko_KR" then
-						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#FF0000\">v" .. update_VERSION .. "로 업데이트 실패.</font>")
-					else
-						PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#FF0000\">v" .. update_VERSION .. " update failed.</font>")
-					end
+					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#FF0000\">v" .. update_VERSION .. " update failed.</font>")
 				end
 			elseif (update_MAJORVERSION and update_SUBVERSION) and (update_MAJORVERSION == MAJORVERSION and update_SUBVERSION == SUBVERSION) then
-				if Locale == "ko_KR" then
-					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">업데이트 사항이 없습니다.</font>")
-				else
-					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">No updates. It's lastest version</font>")
-				end
+				PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">No updates. It's lastest version</font>")
 			elseif (update_MAJORVERSION  and update_SUBVERSION) then
-				if Locale == "ko_KR" then
-					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">최신 버전이 이미 인스톨 되어 있습니다. v"..update_VERSION.."이 있지만 다운 받지 않습니다.</font>")
-				else
-					PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v"..update_VERSION.." is exist, but already installed new version.</font>")
-				end
+				PrintChat("<font color=\"#81BEF7\">" .. SCRIPT_NAME .. ": </font> <font color=\"#00FF00\">v"..update_VERSION.." is exist, but already installed new version.</font>")
 			end
 		end
 	end
