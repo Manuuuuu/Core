@@ -48,9 +48,9 @@ FAQ:
 
 3.2. Default value is 1.
 
-3.3. +2. It add 2 ACC, need 10 donation and 2 week.
+3.3. +2. It add 2 ACC, 10 USD for 2 week.
 
-3.4. +4. It add 4 ACC, need 15 donation and 3 week.
+3.4. +4. It add 4 ACC, 15 USD for 3 week.
 
 3.5. If need more then 4, PM to livewa.
 
@@ -62,7 +62,7 @@ FAQ:
 
 5. ETC
 
-5.1. HWID reset for only NEKO donator, it need 2 donation.
+5.1. HWID reset for only NEKO donator, 2 USD.
 
 5.2. ARAM, Dominion, Twist Map are not yet official support.
 
