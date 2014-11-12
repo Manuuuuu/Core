@@ -2,7 +2,7 @@ FAQ:
 
 1. Run Error
 
-1.1. Micro soft .Net FrameWork 4.51 installed?
+1.1. Micro soft .Net FrameWork 4.52 installed?
 
 1.2. Run with Admininstrator?
 
