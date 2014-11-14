@@ -4,18 +4,18 @@ Project Neko AI
 FAQ:
 0. Download link: https://drive.google.com/file/d/0B8Kw0bAKi_m8UFJiR3REdGdhc0U/edit?usp=sharing <br>
 1. Run Error<br>
-1.1. Micro soft .Net FrameWork 4.52 installed?<br>
-1.2. Run with Admininstrator?<br>
-1.3. Anti virus or Firewall except this?<br>
-1.4. Authorized?<br>
-1.5. Have a support Champ? (need 1 more champ)<br>
-1.6. LoL client path is correct? (path get from registry)<br>
-1.6.1. Correct Version for LoL server?<br>
-1.6.2. game.cfg is automatic generated when you play LoL game. (If LoL clean installed then need play game.)<br>
-1.7. If you want your game with this then follow below.<br>
-1.7.1. Copy Whole of LoL installed Folder and Paste other directory. <br>
-1.7.2. One for setting to this other one use to player yourself.<br>
-1.7.3. If you AFK in lobby then carefull, this start new game that time other LoL lobby client is IDLE in lobby then occurred BoL injection error.<br>
+1-1. Micro soft .Net FrameWork 4.52 installed?<br>
+1-2. Run with Admininstrator?<br>
+1-3. Anti virus or Firewall except this?<br>
+1-4. Authorized?<br>
+1-5. Have a support Champ? (need 1 more champ)<br>
+1-6. LoL client path is correct? (path get from registry)<br>
+1-6-1. Correct Version for LoL server?<br>
+1-6-2. game.cfg is automatic generated when you play LoL game. (If LoL clean installed then need play game.)<br>
+1-7. If you want your game with this then follow below.<br>
+1-7-1. Copy Whole of LoL installed Folder and Paste other directory. <br>
+1-7-2. One for setting to this other one use to player yourself.<br>
+1-7-3. If you AFK in lobby then carefull, this start new game that time other LoL lobby client is IDLE in lobby then occurred BoL injection error.<br>
 2. In game Error Messages<br>
 2.1. If your BoL ID is free then check BoL is possible for free user.<br>
 2.2. Check match between this ID and BoL ID<br>
