@@ -1,40 +1,41 @@
-# Project Neko AI
+# 프로젝트 네코5 인공지능
 <img src = "http://4.bp.blogspot.com/-t0e9VAfpSWw/U_SkDXVzX_I/AAAAAAAAAio/TNQok13x4tg/s1600/nEko_Banner.jpg">
 
-## Requires:
- * [NEKO5 client](https://drive.google.com/file/d/0B8Kw0bAKi_m8UFJiR3REdGdhc0U/edit?usp=sharing) 
- * [MS .Net FrameWork 4.52](http://www.microsoft.com/en-US/download/details.aspx?id=42643)
- * [Paypal Donation](http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=livewa%40gmail.com&lc=KR&item_name=voluntary%20Donation&currency_code=USD&bn=PP-DonationsBF%3Abtn_donate_SM.gif%3ANonHosted) 
+## 필요 링크:
+ * [NEKO5 클라이언트](https://drive.google.com/file/d/0B8Kw0bAKi_m8UFJiR3REdGdhc0U/edit?usp=sharing) 
+ * [MS 닷넷 프레임워크 4.52](http://www.microsoft.com/en-US/download/details.aspx?id=42643)
+ * [Paypal 기부](http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=livewa%40gmail.com&lc=KR&item_name=voluntary%20Donation&currency_code=USD&bn=PP-DonationsBF%3Abtn_donate_SM.gif%3ANonHosted) 
 
-## Donation options
+## 기부 옵션
 
 ## FAQ:
 
- * Run Error
-* Micro soft .Net FrameWork 4.52 installed?
-* Run with Admininstrator?
-* Anti virus or Firewall except this?
-* Authorized?
-* Have a support Champ? (20 slots are ranomd seed)
-* LoL client path is correct? (path get from registry)
-* Correct Version for LoL server?
-* game.cfg is automatic generated when you play LoL game. (If LoL clean installed then need play game.)
-* If you want your game with this then follow below.
-* Copy Whole of LoL installed Folder and Paste other directory. 
-* One for setting to this other one use to player yourself.
-* If you AFK in lobby then carefull, this start new game that time other LoL lobby client is IDLE in lobby then occurred BoL injection error.
- * In game Error Messages
-* If your BoL ID is free then check BoL is possible for free user.
-* Check match between this ID and BoL ID
-* Check BoL scripts setting correct
-* Check Random picker settings
-* obfuscated.lua Error. This error from BoL, if raised this error message then close LoL client and reconnect.
- * NEKO Boost
-* If it activated then use multiple ACC in sametime work.
-* Default value is 1.
-* Options: +2, +4. If need more then 4, PM to livewa.
- * NEKO5 download/update.
-* Use latest version Download Menu.
- * ETC
-* HWID reset
-* ARAM, Dominion, Twist Map are not yet official support.
+ * 실행 관련 에러
+* MS 닷넷 프레임워크 4.52 또는 그 이상의 버전이 인스톨 되었는지 확인 할 것
+* 정상 구동이 안 될 경우 관리자 권한으로 실행 할 것.
+* 정상 구동이 안 될 경우, 파이어 월 옵션과 백신 옵션에서 예외 처리를 해 줄 것.
+* 인증 되지 않은 경우 작동 하지 않음. 인증 기간 확인 할 것.
+* 네코5가 지원하는 챔프를 보유 하고 있는지 확인 할 것. 20개의 챔프 슬롯은 선택 순서가 아닌 랜덤 선택 리스티임. 보유한 챔프로만 구성 할 것. 동일 챔프를 여러개 입력 할 경우 해당 챔프 선택 빈도 수가 증가함.
+* 롤 클라이언트 설치 폴더가 올바른지 확인 할 것. 레지스트리를 통해 인스톨 된 위치를 파악함. 폴더 명을 바꾸었거나 경로를 이동한 경우 수동 입력 할 것.
+* 롤 클라이언트가 최신 버전으로 패치 되었는지 확인 할 것.
+* game.cfg 가 없을 경우 롤 클라이언트 경로를 인식하지 못함. 롤 클라이언트 설치 이후 최소 1회의 게임 실행이 필요함.
+ * 네코5 구동 중 직접 게임을 추가로 해야 할 경우 아래 순서대로 진행.
+* 롤 클라이언트 폴더를 복사 하여 다른 위치에 붙여 넣기를 함.
+* 하나는 네코5에서 사용 할 것이며, 다른 하나는 직접 게임을 하는 데에 사용 함.
+* 만일 직접 게임을 하는 롤 클라이언트 상에서 게임 중이 아닐 경우 즉 로비에 있는 경우에는 네코5가 잘 작동 하는지 확인 할 것. 로비에 나와 있는 상태에서 네코5가 신규 게임을 시작하면 해당 게임을 관전 하려 함으로 인해, 볼 인젝션 오류가 날 수 있음.
+ * 게임 중 에러 메세지
+* 만약 볼 ID가 Free ID일 경우 Free 사용 가능 기간인지 확인 할 것.
+* 네코5 등록 ID와 볼 ID가 동일 한지 확인 할 것.
+* 볼 스크립트 체크가 올바른지 확인 할 것.
+* 랜덤 픽 리스트가 올바른지 확인 할 것.
+* obfuscated.lua 에러는 볼 서버와의 통신 및 코드 분석 실패로 인해 발생함. 해당 에러 발생 시 해당 게임을 종료하고 재접속 해야 함.
+ * 네코 부스트
+* 추가 네코 계정을 활성화 함.
+* 기본은 1개의 계정이 활성화 되어 있음.
+* 추가 옵션: +2, +4. 4개 이상의 계정 활성이 필요 할 경우 개인 메세지.
+ * 네코5 다운로드 및 업데이트
+* 메뉴의 latest version Download를 선택 하면 최신 버전을 바탕 화면으로 다운로드 함.
+ * 기타
+* HWID 리셋
+* 현재 공식 지원 맵은 소환사의 협곡..
+* 
