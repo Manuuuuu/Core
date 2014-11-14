@@ -28,6 +28,7 @@
 * Check match between this ID and BoL ID
 * Check BoL scripts setting correct
 * Check Random picker settings
+* DATA send error: It depend on LoL server status and ping, network condition...
 * obfuscated.lua Error. This error from BoL, if raised this error message then close LoL client and reconnect.
  * NEKO Boost
 * If it activated then use multiple ACC in sametime work.
