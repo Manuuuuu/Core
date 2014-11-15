@@ -81,35 +81,36 @@
 require "2DGeometry"
 -- Config ----------------------------------------------------------------------
 regions = {
-	botLeftJungeGate1			 = Polygon(Point(4673, 1466),  Point(4696, 2100), Point(10346, 2552),   Point(10888, 1665)),
-	topLeftJungeGate1			 = Polygon(Point(1259, 4826),  Point(1390, 10406), Point(2345, 10208),   Point(2533, 4802)),
-	midLeftJungeGate1			 = Polygon(Point(2782, 4665),  Point(9495, 11599), Point(9831, 10830),   Point(3363, 4489)),
-	midRightJungeGate1		 = Polygon(Point(4157, 3680),  Point(10610, 10067), Point(11245, 9763),   Point(4493, 3029)),
-	botRightJungeGate1		 = Polygon(Point(11600, 4482),  Point(12017, 9621), Point(12609, 9565),   Point(12630, 3998)),
-	topRightJungeGate1		 = Polygon(Point(3287, 12641),  Point(9341, 12862), Point(9507, 11603),   Point(3380, 10830)),
-	BaronHuntingPoint1		 = Polygon(Point(3248, 9706),  Point(4541, 10700), Point(5041, 10171),   Point(4290, 8873)),
-	DragonHuntingPoint1		 = Polygon(Point(8946, 4018),  Point(9684, 3719), Point(10620, 4499),   Point(9502, 5379)),	
-	topLeftOuterJungle     = Polygon(Point(1477, 4747),  Point(1502, 11232), Point(5951, 7201),   Point(3169, 4379)),
-	topLeftInnerJungle     = Polygon(Point(3090, 5144),  Point(2071, 5398),  Point(2088, 10702),  Point(5439, 7665)),
-	topOuterRiver          = Polygon(Point(5951, 7201),  Point(1502, 11232), Point(2883, 12752),  Point(7001, 7957)),
-	topInnerRiver          = Polygon(Point(5439, 7665),  Point(2088, 10702), Point(3454, 12086),  Point(6503, 8537)),
-	topRightOuterJungle    = Polygon(Point(7001, 7957),  Point(2883, 12752), Point(9465, 12832),  Point(9830, 11003)),
-	topRightInnerJungle    = Polygon(Point(6503, 8537),  Point(3454, 12086), Point(8825, 12137),  Point(9085, 11115)),
-	bottomLeftOuterJungle  = Polygon(Point(4112, 3575),  Point(6969, 6416),  Point(10922, 1920),  Point(4486, 1784)),
-	bottomLeftInnerJungle  = Polygon(Point(5132, 2358),  Point(4963, 3448),  Point(7499, 5798),   Point(10421, 2489)),
-	bottomOuterRiver       = Polygon(Point(10922, 1920), Point(6969, 6416),  Point(8192, 7207),   Point(12552, 3442)),
-	bottomInnerRiver       = Polygon(Point(10421, 2489), Point(7499, 5798),  Point(8742, 6731),   Point(11947, 3964)),
-	bottomRightOuterJungle = Polygon(Point(12552, 3442), Point(8192, 7207),  Point(10693, 10119), Point(12610, 9769)),
-	bottomRightInnerJungle = Polygon(Point(11947, 3964), Point(8742, 6731),  Point(11076, 9373),  Point(11998, 9234)),
-	leftMidLane            = Polygon(Point(3169, 4379),  Point(5951, 7201),  Point(6969, 6416),   Point(4112, 3575)),
-	centerMidLane          = Polygon(Point(6969, 6416),  Point(5951, 7201),  Point(7001, 7957),   Point(8192, 7207)),
-	rightMidLane           = Polygon(Point(8192, 7207),  Point(7001, 7957),  Point(9830, 11003),  Point(10693, 10119)),
-	leftBotLane            = Polygon(Point(4502, 492),   Point(4486, 1784),  Point(10922, 1920),  Point(12183, 485)),
-	centerBotLane          = Polygon(Point(12183, 485),  Point(10922, 1920), Point(12552, 3442),  Point(13985, 2204)),
-	rightBotLane           = Polygon(Point(13985, 2204), Point(12552, 3442), Point(12610, 9769),  Point(14018, 9792)),
-	leftTopLane            = Polygon(Point(23, 4744),    Point(9, 12584),    Point(1502, 11232),  Point(1477, 4747)),
-	centerTopLane          = Polygon(Point(1502, 11232), Point(9, 12584),    Point(1547, 14305),  Point(2883, 12752)),
-	rightTopLane           = Polygon(Point(2883, 12752), Point(1547, 14305), Point(9419, 14299),  Point(9465, 12832))
+	-- 407 221	
+	botLeftJungeGate1			 = Polygon(Point(5080, 1687),  	Point(5103, 2321), 		Point(10753, 2773),   Point(11295, 1886		)),
+	topLeftJungeGate1			 = Polygon(Point(1666, 5047),  	Point(1797, 10627), 	Point(2752, 10429),   Point(2940, 5023		)),
+	midLeftJungeGate1			 = Polygon(Point(3189, 4886),  	Point(9902, 11820), 	Point(10238, 11051),  Point(3770, 4710		)),
+	midRightJungeGate1		 = Polygon(Point(4564, 3901),  	Point(11017, 10288), 	Point(11652, 9984),   Point(4900, 3250		)),
+	botRightJungeGate1		 = Polygon(Point(12007, 4703),  Point(12424, 9842), 	Point(13016, 9786),   Point(13037, 4219		)),
+	topRightJungeGate1		 = Polygon(Point(3694, 12862),  Point(9748, 13083), 	Point(9914, 11824),   Point(3787, 11051		)),
+	BaronHuntingPoint1		 = Polygon(Point(3655, 9927),  	Point(4948, 10921), 	Point(5448, 10392),   Point(4697, 9094		)),
+	DragonHuntingPoint1		 = Polygon(Point(9353, 4239),  	Point(10091, 3940), 	Point(11027, 4720),   Point(9909, 5600		)),	
+	topLeftOuterJungle     = Polygon(Point(1770, 5001),  	Point(2088, 10882), 	Point(6345, 7451),  	Point(3518, 4587		)),
+	topLeftInnerJungle     = Polygon(Point(2733, 10350),  Point(2383, 5625),  	Point(3854, 5347),  	Point(5644, 8024		)),
+	bottomLeftOuterJungle  = Polygon(Point(4519, 3796),  	Point(7376, 6637),  	Point(11329, 2141),  	Point(4893, 2005		)),
+	bottomLeftInnerJungle  = Polygon(Point(5539, 2579),  	Point(5370, 3669),  	Point(7906, 6019),   	Point(10828, 2710		)),
+	topOuterRiver          = Polygon(Point(6358, 7422),  	Point(1909, 11453), 	Point(3290, 12973),  	Point(7408, 8178		)),
+	topInnerRiver          = Polygon(Point(5846, 7886),  	Point(2495, 10923), 	Point(3861, 12307),  	Point(6910, 8758		)),
+	topRightOuterJungle    = Polygon(Point(7408, 8178),  	Point(3290, 12973), 	Point(9872, 13053),  	Point(10237, 11224	)),
+	topRightInnerJungle    = Polygon(Point(6910, 8758),  	Point(3861, 12307), 	Point(9232, 12358),  	Point(9492, 11336		)),
+	bottomOuterRiver       = Polygon(Point(11329, 2141), 	Point(7376, 6637),  	Point(8599, 7428),   	Point(12959, 3663		)),
+	bottomInnerRiver       = Polygon(Point(10828, 2710), 	Point(7906, 6019),  	Point(9149, 6952),   	Point(12354, 4185		)),
+	bottomRightOuterJungle = Polygon(Point(12959, 3663), 	Point(8599, 7428),  	Point(11100, 10340), 	Point(13017, 9990		)),
+	bottomRightInnerJungle = Polygon(Point(12354, 4185), 	Point(9149, 6952),  	Point(11483, 9594),  	Point(12405, 9455		)),
+	leftMidLane            = Polygon(Point(3576, 4600),  	Point(6358, 7422),  	Point(7376, 6637),   	Point(4519, 3796		)),
+	centerMidLane          = Polygon(Point(7376, 6637),  	Point(6358, 7422),  	Point(7408, 8178),   	Point(8599, 7428		)),
+	rightMidLane           = Polygon(Point(8599, 7428),  	Point(7408, 8178),  	Point(10237, 11224),  Point(11100, 10340	)),
+	leftBotLane            = Polygon(Point(4909, 713),   	Point(4893, 2005),  	Point(11329, 2141),  	Point(12590, 706		)),
+	centerBotLane          = Polygon(Point(12590, 706),  	Point(11329, 2141), 	Point(12959, 3663),  	Point(14392, 2425		)),
+	rightBotLane           = Polygon(Point(14392, 2425), 	Point(12959, 3663), 	Point(13017, 9990),  	Point(14425, 10013	)),
+	leftTopLane            = Polygon(Point(430, 4965),    Point(416, 12805),  	Point(1909, 11453),  	Point(1884, 4968		)),
+	centerTopLane          = Polygon(Point(1909, 11453), 	Point(416, 12805),  	Point(1954, 14526),  	Point(3290, 12973		)),
+	rightTopLane           = Polygon(Point(3290, 12973), 	Point(1954, 14526), 	Point(9826, 14520),  	Point(9872, 13053		))
 }
 walls = {
 	Polygon(Point(8697.0595703125, 4610.6459960938), Point(8576.7177734375, 4711.4995117188), Point(8458.88671875, 4841.6059570313), Point(8341.3466796875, 4917.2241210938), Point(8262.7470703125, 5006.9565429688), Point(8294.521484375, 5136.1840820313), Point(8385.4765625, 5204.701171875), Point(8513.78125, 5204.4111328125), Point(8665.462890625, 5178.8334960938), Point(8820.1669921875, 5141.6323242188), Point(8967.1220703125, 5111.1997070313), Point(9112.9111328125, 5068.08984375), Point(9243.828125, 4996.6420898438), Point(9382.6865234375, 4933.0263671875), Point(9516.2109375, 4872.705078125), Point(9549.22265625, 4773.5561523438), Point(9491.236328125, 4699.9497070313), Point(9359.15625, 4773.7797851563), Point(9154.328125, 4742.6088867188), Point(9013.6484375, 4589.1333007813), Point(8952.6875, 4427.99609375), Point(8920.1513671875, 4275.0751953125), Point(8919.341796875, 4109.9272460938), Point(8972.5634765625, 3958.8898925781), Point(9089.234375, 3857.0417480469), Point(9222.728515625, 3769.9497070313), Point(9338.5458984375, 3656.3537597656), Point(9501.734375, 3641.9694824219), Point(9663.2216796875, 3679.7104492188), Point(9778.4013671875, 3786.6740722656), Point(9884.3466796875, 3900.5710449219), Point(10012.1484375, 3996.1599121094), Point(10060.795898438, 4158.8774414063), Point(9988.2998046875, 4305.2944335938), Point(9925.875, 4424.45703125), Point(9987.6201171875, 4496.6186523438), Point(10093.018554688, 4439.9467773438), Point(10204.922851563, 4348.8623046875), Point(10305.951171875, 4234.6645507813), Point(10418.0546875, 4140.193359375), Point(10476.965820313, 4012.1672363281), Point(10548.491210938, 3883.01171875), Point(10587, 3745.6052246094), Point(10573.125, 3607.1862792969), Point(10528.126953125, 3493.6228027344), Point(10410.384765625, 3442.7958984375), Point(10260.192382813, 3436.2700195313), Point(10093.0625, 3421.173828125), Point(10007.512695313, 3280.4008789063), Point(9989.9033203125, 3131.0661621094), Point(9877.3759765625, 3041.6181640625), Point(9742.3046875, 3051.8032226563), Point(9618.2939453125, 3128.8962402344), Point(9489.37890625, 3208.1491699219), Point(9348.2080078125, 3281.4846191406), Point(9201.5009765625, 3318.5361328125), Point(9077.25390625, 3407.7160644531), Point(8963.53515625, 3509.92578125), Point(8857.3369140625, 3619.3430175781), Point(8765.1328125, 3745.5297851563), Point(8737.2529296875, 3888.4191894531), Point(8666.4443359375, 4019.0078125), Point(8664.0185546875, 4173.2744140625), Point(8651.90625, 4324.2670898438), Point(8687.52734375, 4477.2504882813)),
@@ -214,6 +215,12 @@ walls = {
 	Polygon(Point(57.350742340088, 2411.5656738281), Point(79.669555664063, 2504.0200195313), Point(84.423347473145, 2644.8779296875), Point(88.105239868164, 2813.3234863281), Point(84.41626739502, 2974.3256835938), Point(95.326553344727, 3160.15234375), Point(93.648956298828, 3318.7590332031), Point(89.360130310059, 3475.6665039063), Point(95.054382324219, 3657.5515136719), Point(90.369140625, 3824.6057128906), Point(92.71257019043, 3995.1457519531), Point(165.28771972656, 4163.0712890625), Point(228.02821350098, 4311.478515625), Point(275.65673828125, 4464.8403320313), Point(290.65509033203, 4632.7592773438), Point(321.02682495117, 4786.7563476563), Point(325.45223999023, 4970.6127929688), Point(343.92352294922, 5127.388671875), Point(258.16931152344, 5245.5244140625), Point(93.119750976563, 5296.10546875), Point(-59.170166015625, 5304.611328125), Point(-215.71374511719, 5304.62109375), Point(-272.18115234375, 5152.7958984375), Point(-227.31518554688, 4991.966796875), Point(-219.76489257813, 4824.85546875), Point(-31.121459960938, 4805.5869140625), Point(-212.16186523438, 4551.2739257813), Point(-241.23449707031, 4377.759765625), Point(-242.91784667969, 4171.2880859375), Point(-244.40112304688, 4010.2136230469), Point(-237.11804199219, 3822.2902832031), Point(-228.03771972656, 3636.79296875), Point(-201.52685546875, 3463.0502929688), Point(-275.69360351563, 3300.2507324219), Point(-236.48974609375, 3151.2333984375), Point(-295.88928222656, 2972.0673828125), Point(-223.91979980469, 2820.5532226563), Point(-211.54455566406, 2665.4445800781), Point(-170.89331054688, 2505.0344238281), Point(-110.92419433594, 2362.6931152344)),
 	Polygon(Point(7286.064453125, 10514.071289063), Point(7291.5473632813, 10364.463867188), Point(7279.1884765625, 10215.4453125), Point(7177.412109375, 10110.068359375), Point(7038.4663085938, 10043.249023438), Point(6888.7504882813, 10003.18359375), Point(6736.8125, 9971.60546875), Point(6586.9233398438, 9921.26953125), Point(6423.478515625, 9932.5830078125), Point(6269.28125, 9928.0166015625), Point(6117.193359375, 9918.4462890625), Point(5971.8295898438, 9942.4541015625), Point(5889.955078125, 10052.21484375), Point(5839.2104492188, 10194.11328125), Point(5808.7602539063, 10342.771484375), Point(5801.2509765625, 10494.760742188), Point(5833.4418945313, 10650.630859375), Point(5898.8159179688, 10789.462890625), Point(5991.8344726563, 10898.346679688), Point(6103.2475585938, 11005.819335938), Point(6212.361328125, 11112.8984375), Point(6351.3662109375, 11149.666015625), Point(6492.302734375, 11151.262695313), Point(6578.1142578125, 11051.220703125), Point(6592.40625, 10907.095703125), Point(6410.3291015625, 10835.525390625), Point(6374.0751953125, 10647.33984375), Point(6376.0932617188, 10474.299804688), Point(6559.5473632813, 10449.466796875), Point(6719.4418945313, 10456.126953125), Point(6888.6977539063, 10434.932617188), Point(6985.73046875, 10568.708007813), Point(7058.9375, 10690.276367188), Point(7205.1245117188, 10700.263671875))
 }
+function OnDraw()
+	-- regions["topLeftOuterJungle"]:draw(ARGB(255,255,255,255), 1)
+	-- regions["topLeftInnerJungle"]:draw(ARGB(255,255,255,0), 1)
+	-- regions["bottomLeftOuterJungle"]:draw(ARGB(255,255,255,255), 1)
+	-- regions["bottomLeftInnerJungle"]:draw(ARGB(255,255,255,0), 1)
+end
 -- Code ------------------------------------------------------------------------
 function fileExists(name)
 	local f = io.open(name, "r") if f ~= nil then io.close(f) return true else return false end
