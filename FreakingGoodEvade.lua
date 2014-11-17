@@ -1,7 +1,7 @@
 --NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 11031417 
+local SUBVERSION = 11180404 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
