@@ -1,7 +1,7 @@
 --NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 11180404 
+local SUBVERSION = 11181839 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1803,7 +1803,7 @@ function OnLoad()
 	GoodEvadeConfig.dodgeEnabled = true
 	currentbuffer = GoodEvadeConfig.evadeBuffer
 	-- PrintChat(versionmessage)
-	if AUTOUPDATE then DownloadFile(URL, UPDATE_TEMP_FILE, Update) end
+	-- if AUTOUPDATE then DownloadFile(URL, UPDATE_TEMP_FILE, Update) end
 end
 function haveShieldThenUse()
 	if isSivir then CastSpell(_E) 
