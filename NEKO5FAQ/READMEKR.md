@@ -2,6 +2,9 @@
 <img src = "http://4.bp.blogspot.com/-t0e9VAfpSWw/U_SkDXVzX_I/AAAAAAAAAio/TNQok13x4tg/s1600/nEko_Banner.jpg">
 
 ## 필요 링크:
+ * 윈도우즈 비스타 또는 상위 버전
+ * BoL 프리/VIP ID
+ * 롤 클라이언트
  * [NEKO5 클라이언트](https://drive.google.com/file/d/0B8Kw0bAKi_m8UFJiR3REdGdhc0U/edit?usp=sharing) 
  * [MS 닷넷 프레임워크 4.52](http://www.microsoft.com/en-US/download/details.aspx?id=42643)
  * [Paypal 기부](http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=livewa%40gmail.com&lc=KR&item_name=voluntary%20Donation&currency_code=USD&bn=PP-DonationsBF%3Abtn_donate_SM.gif%3ANonHosted) 
