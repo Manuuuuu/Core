@@ -10,7 +10,10 @@
  * [Paypal 기부](http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=livewa%40gmail.com&lc=KR&item_name=voluntary%20Donation&currency_code=USD&bn=PP-DonationsBF%3Abtn_donate_SM.gif%3ANonHosted) 
 
 ## 기부 옵션
-
+ * Basic: 1 계정(1 달) 10 USD
+ * Maximum: 5 계정(1 달) 33 USD
+ * Add +2: 2 계정 추가(2 주) + 10 USD (Basic 기간내에서만 작동)
+ * Add +4: 4 계정 추가(3 주) + 15 USD (Basic 기간내에서만 작동)
 ## FAQ:
 
  * 실행 관련 에러
