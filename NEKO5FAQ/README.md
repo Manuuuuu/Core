@@ -13,6 +13,7 @@
  * Maximum: 5 ACC(1 month) 33 USD
  * Add +2: add 2 ACC(2 week) + 10 USD (require Basic period)
  * Add +4: add 4 ACC(3 week) + 15 USD (require Basic period)
+ * HWID reset: 2 USD
  
 ## FAQ:
 
