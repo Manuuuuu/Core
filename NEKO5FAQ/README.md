@@ -7,9 +7,8 @@
  * LoL Client
  * [NEKO5 client](https://drive.google.com/file/d/0B8Kw0bAKi_m8UFJiR3REdGdhc0U/edit?usp=sharing) 
  * [MS .Net FrameWork 4.52](http://www.microsoft.com/en-US/download/details.aspx?id=42643)
- * [Paypal Donation](http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=livewa%40gmail.com&lc=KR&item_name=voluntary%20Donation&currency_code=USD&bn=PP-DonationsBF%3Abtn_donate_SM.gif%3ANonHosted) 
 
-## Donation options
+## [Paypal Donation options](http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=livewa%40gmail.com&lc=KR&item_name=voluntary%20Donation&currency_code=USD&bn=PP-DonationsBF%3Abtn_donate_SM.gif%3ANonHosted) 
  * Basic: 1 ACC(1 month) 10 USD
  * Maximum: 5 ACC(1 month) 33 USD
  * Add +2: add 2 ACC(2 week) + 10 USD (require Basic period)
