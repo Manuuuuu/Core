@@ -13,6 +13,7 @@
  * Maximum: 5 계정(1 달) 33 USD
  * Add +2: 2 계정 추가(2 주) + 10 USD (Basic 기간내에서만 작동)
  * Add +4: 4 계정 추가(3 주) + 15 USD (Basic 기간내에서만 작동)
+ * HWID 리셋: 2 USD
  
 ## FAQ:
 
