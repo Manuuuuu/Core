@@ -18,6 +18,7 @@
 ## FAQ:
 
  * Run Error
+* It not tested with VM ware so is it work or not work on VM ware? IDK.
 * Micro soft .Net FrameWork 4.52 installed?
 * Run with Admininstrator?
 * Anti virus or Firewall except this?
