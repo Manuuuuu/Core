@@ -1,7 +1,7 @@
 --NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 11282125 
+local SUBVERSION = 12222052 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1810,23 +1810,23 @@ function haveShieldThenUse()
 	elseif isNocturne then CastSpell(_W) end
 end
 function OnTick()
-	if GoodEvadeConfig.freemovementblock then
-		if evading and not alreadywritten then
-			local file = io.open(thatfile, "w")
-			file:write("1")
-			file:close()
-			alreadywritten = true
-			elseif not evading and alreadywritten then
-			local file = io.open(thatfile, "w")
-			file:write("0")
-			file:close()
-			alreadywritten = false
-		end
-		if not wrotedisclaimer then
-			PrintChat("<font color=\"#FF0000\" >You just enabled free user movement block, this function will only work if you followed tutorial in main thread of the script before allowing it.</font>")
-			wrotedisclaimer = true
-		end
-	end
+	-- if GoodEvadeConfig.freemovementblock then
+		-- if evading and not alreadywritten then
+			-- local file = io.open(thatfile, "w")
+			-- file:write("1")
+			-- file:close()
+			-- alreadywritten = true
+			-- elseif not evading and alreadywritten then
+			-- local file = io.open(thatfile, "w")
+			-- file:write("0")
+			-- file:close()
+			-- alreadywritten = false
+		-- end
+		-- if not wrotedisclaimer then
+			-- PrintChat("<font color=\"#FF0000\" >You just enabled free user movement block, this function will only work if you followed tutorial in main thread of the script before allowing it.</font>")
+			-- wrotedisclaimer = true
+		-- end
+	-- end
 	if skillshotToAdd ~= nil and skillshotToAdd.object ~= nil and skillshotToAdd.object.valid and (GetTickCount() - skillshotToAdd.startTick) >= GoodEvadeConfig.fowdelay and skillshotToAdd.startPosition == nil then
 			skillshotToAdd.startPosition = Point2(skillshotToAdd.object.x, skillshotToAdd.object.z)
 		elseif skillshotToAdd ~= nil and skillshotToAdd.object ~= nil and skillshotToAdd.object.valid and (GetTickCount() - skillshotToAdd.startTick) >= (GoodEvadeConfig.fowdelay+1) then
