@@ -1,7 +1,7 @@
 --NEKO
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 1
-local SUBVERSION = 12222052 
+local SUBVERSION = 12222056 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1708,7 +1708,7 @@ function OnLoad()
 	GoodEvadeConfig:addParam("resetdodge", "Reset Dodge", SCRIPT_PARAM_ONKEYDOWN, false, 17)
 	GoodEvadeConfig:addParam("allowMove", "Allow use of 0 cast time spells", SCRIPT_PARAM_ONOFF, true)
 	GoodEvadeConfig:addParam("stopCCMoves", "Use 0 cast time spells with self cc", SCRIPT_PARAM_ONOFF, true)
-	GoodEvadeConfig:addParam("freemovementblock", "Free Users Movement Block", SCRIPT_PARAM_ONOFF, false)
+	-- GoodEvadeConfig:addParam("freemovementblock", "Free Users Movement Block", SCRIPT_PARAM_ONOFF, false)
 	GoodEvadeConfig:addParam("oldDrawing", "Use old drawing", SCRIPT_PARAM_ONOFF, false)
 	GoodEvadeConfig:permaShow("dodgeEnabled")
 	for i = 1, heroManager.iCount do
