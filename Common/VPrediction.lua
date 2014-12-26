@@ -1,4 +1,4 @@
-local version = "2.531"
+local version = "2.631"
 local TESTVERSION = false
 local AUTOUPDATE = false
 -- local UPDATE_HOST = "raw.github.com"
@@ -7,6 +7,7 @@ local UPDATE_FILE_PATH = LIB_PATH.."vPrediction.lua"
 local UPDATE_URL = "https://raw.githubusercontent.com/livewa/Core/master/Common/VPrediction.lua"
 -- local UPDATE_URL = "https://raw.githubusercontent.com/Hellsing/BoL/master/common/VPrediction.lua"
 -- http://botoflegends.com/forum/topic/22778-official-fork-honda7s-repo/
+_G.VP_modifyed = true
 local function AutoupdaterMsg(msg) print("<font color=\"#6699ff\"><b>VPrediction:</b></font> <font color=\"#FFFFFF\">"..msg..".</font>") end
 if AUTOUPDATE then
 	local ServerData = GetWebResult(UPDATE_HOST, "/Hellsing/BoL/master/version/VPrediction.version")
@@ -458,27 +459,25 @@ end
 function VPrediction:GetCurrentWayPoints(object)
 	local result = {}
 
-	if not VIP_USER then
+	-- if not VIP_USER then
 		if object.hasMovePath then
-			table.insert(result, Vector(object.x, object.z))
+			table.insert(result, Vector(object.x, object.z))			
 			for i = object.pathIndex, object.pathCount do
 				path = object:GetPath(i)
 				table.insert(result, Vector(path.x, path.z))
 			end
 		else
 			table.insert(result, object and Vector(object.x, object.z) or Vector(object.x, object.z))
-		end
+		end		
 		return result
+		--[[
 	else
 		local wayPoints, lineSegment, distanceSqr, fPoint = WayPointManager:GetRawWayPoints(object), 0, math.huge, nil
-		if not wayPoints and not object then
-			return { { x = object.x, y = object.z } }
-		elseif not wayPoints and object then
-			return { { x = object.x, y = object.z } }
-		end
+		if not wayPoints and object then print("no way")  return { { x = object.x, y = object.z } } end
 		for i = 1, #wayPoints - 1 do
 			local p1, tmp1, tmp2 = VectorPointProjectionOnLineSegment(wayPoints[i], wayPoints[i + 1], Vector(object))
 			local distanceSegmentSqr = GetDistanceSqr(p1, object)
+			print(distanceSegmentSqr)
 			if distanceSegmentSqr <= distanceSqr then
 				fPoint = p1
 				lineSegment = i
@@ -493,8 +492,8 @@ function VPrediction:GetCurrentWayPoints(object)
 		end
 		if #result == 2 and GetDistanceSqr(result[1], result[2]) < 400 then result[2] = nil end
 		return result
-	end
-	
+		--]]
+	-- end	
 end
 
 
