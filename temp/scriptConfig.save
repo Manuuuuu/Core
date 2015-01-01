@@ -1,0 +1,1885 @@
+return {
+	["WoongEzreal_combo"] = {
+	},
+	["Riven_Orbwalking"] = {
+	},
+	["||Embryo Riven day||_STS"] = {
+		["_param"] = {
+		},
+		["mode"] = 1,
+		["Selected"] = true,
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Viktor day||_R"] = {
+	},
+	["WoongEzreal_Orbwalking"] = {
+	},
+	["||| Embryo 0819-1 |||_SmiteBang"] = {
+	},
+	["sidasacskills"] = {
+		["SkillFarm"] = false,
+		["FarmMinMana"] = 30,
+		["_param"] = {
+			[2] = {
+				["key"] = 72,
+			},
+		},
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Riven day2||_R"] = {
+	},
+	["||| Embryo 0819-1 |||_usePotion"] = {
+		["_param"] = {
+		},
+		["drink"] = true,
+		["_tsInstances"] = {
+		},
+		["HP"] = 72,
+		["MP"] = 72,
+	},
+	["||Embryo Viktor day||_STS_STS"] = {
+	},
+	["||| Embryo 141227 |||_ASConfig"] = {
+		["_param"] = {
+		},
+		["teammateshield5"] = true,
+		["teammateshield4"] = true,
+		["mindmgpercent"] = 0,
+		["teammateshield2"] = true,
+		["_tsInstances"] = {
+		},
+		["teammateshield1"] = true,
+		["maxhppercent"] = 100,
+		["skillshots"] = true,
+		["shieldslow"] = true,
+		["teammateshield3"] = true,
+		["shieldcc"] = true,
+	},
+	["sidasacskills_WRicochet"] = {
+	},
+	["Riven_W"] = {
+	},
+	["||| NEKO5 AI 0801-1 |||_GhostSettings"] = {
+		["_param"] = {
+		},
+		["helloSwitch2"] = false,
+		["_tsInstances"] = {
+		},
+		["koreaChat"] = false,
+		["ghostPing"] = false,
+	},
+	["||| Embryo 141227 |||_WardCheck"] = {
+		["Marker"] = 5,
+		["OwnTeam"] = true,
+		["Enable"] = true,
+		["Tick"] = 2,
+		["_tsInstances"] = {
+		},
+		["DrawRange"] = false,
+		["ShowTraps"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 192,
+			},
+		},
+	},
+	["||Embryo Viktor day||_STS"] = {
+		["_param"] = {
+		},
+		["mode"] = 1,
+		["Selected"] = true,
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Karthus day||_Orbwalking"] = {
+		["_param"] = {
+		},
+		["AA"] = true,
+		["_tsInstances"] = {
+		},
+		["force"] = 1,
+		["minionMarker"] = true,
+	},
+	["||| Embryo 0819-1 |||_exhoustSpell"] = {
+		["_param"] = {
+		},
+		["myHealth"] = 65,
+		["_tsInstances"] = {
+		},
+		["targetHealth"] = 75,
+		["exhaustBang"] = true,
+	},
+	["||| Embryo 0819-1 |||_Hud"] = {
+		["_param"] = {
+		},
+		["Tick"] = 0.10000000149012,
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Riven day||_Drawings_circle2"] = {
+		["_param"] = {
+		},
+		["circle2enabled"] = false,
+		["_tsInstances"] = {
+		},
+		["circle2color"] = {
+			[1] = 205,
+			[2] = 230,
+			[4] = 67,
+			[3] = 67,
+		},
+		["circle2width"] = 1,
+		["circle2quality"] = 50,
+	},
+	["||Embryo Riven day2||_W"] = {
+	},
+	["Riven"] = {
+		["combo"] = false,
+		["cancel"] = 1,
+		["_tsInstances"] = {
+		},
+		["farm"] = false,
+		["_param"] = {
+			[2] = {
+				["key"] = 32,
+			},
+			[4] = {
+				["key"] = 88,
+			},
+			[3] = {
+				["key"] = 67,
+			},
+		},
+		["flee"] = false,
+	},
+	["||Embryo Viktor day||_Drawings_circle4"] = {
+		["_param"] = {
+		},
+		["circle4width"] = 1,
+		["_tsInstances"] = {
+		},
+		["circle4color"] = {
+			[1] = 205,
+			[2] = 86,
+			[4] = 67,
+			[3] = 230,
+		},
+		["circle4quality"] = 260,
+		["circle4enabled"] = false,
+	},
+	["||| Embryo 0819-1 |||_Hud_AllyHud"] = {
+		["_param"] = {
+		},
+		["Enable"] = true,
+		["Y"] = 137,
+		["_tsInstances"] = {
+		},
+		["Distance"] = 0.78,
+		["Size"] = 0.78,
+		["X"] = 22,
+	},
+	["||| Embryo 0819-1 |||_Hud_expMenu"] = {
+		["_param"] = {
+		},
+		["enable"] = true,
+		["_tsInstances"] = {
+		},
+		["displayMyCircle"] = true,
+		["displayCircleMinions"] = true,
+	},
+	["||| Embryo 141227 |||_QssConfig"] = {
+		["Exhaust"] = true,
+		["ROOTS"] = true,
+		["Mikael2"] = true,
+		["TAUNTS"] = true,
+		["SILENCE"] = true,
+		["CHARMS"] = true,
+		["CAllways"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["CCC"] = false,
+		["Ignite"] = true,
+		["DISARMS"] = true,
+		["SUPPRESS"] = true,
+		["Mikael"] = true,
+		["Mikael3"] = true,
+		["BLINDS"] = true,
+		["SLOWS"] = false,
+		["Mikael1"] = true,
+		["_tsInstances"] = {
+		},
+		["STUNS"] = true,
+		["Mikael4"] = true,
+		["FEARS"] = true,
+	},
+	["Riven_R"] = {
+	},
+	["sidasfarming"] = {
+	},
+	["||| Embryo 141227 |||_usePotion"] = {
+	},
+	["sidasacsetup_sidasacautocarrysub"] = {
+		["Movement"] = true,
+		["MuramanaAutoCarry"] = true,
+		["Attacks"] = true,
+		["HextechGunbladeAutoCarry"] = true,
+		["EntropyAutoCarry"] = true,
+		["Active"] = false,
+		["LeftClick"] = false,
+		["RanduinsOmenAutoCarry"] = true,
+		["BlackfireTorchAutoCarry"] = true,
+		["BilgewaterCutlassAutoCarry"] = true,
+		["_param"] = {
+			[4] = {
+				["key"] = 32,
+			},
+		},
+		["botrkSave"] = true,
+		["TiamatAutoCarry"] = true,
+		["RavenousHydraAutoCarry"] = true,
+		["YoumuusGhostbladeAutoCarry"] = true,
+		["TalismanofAscensionAutoCarry"] = true,
+		["Toggle"] = false,
+		["SwordoftheDivineAutoCarry"] = true,
+		["_tsInstances"] = {
+			[1] = {
+				["mode"] = 7,
+			},
+		},
+		["FrostQueensClaimAutoCarry"] = true,
+		["DeathfireGraspAutoCarry"] = true,
+		["BladeoftheRuinedKingAutoCarry"] = true,
+	},
+	["||| NEKO AI 0801-1 |||_DebuggerCode"] = {
+		["_param"] = {
+		},
+		["code1"] = 8,
+		["_tsInstances"] = {
+		},
+		["code2"] = 5,
+		["code4"] = 7,
+		["code3"] = 8,
+	},
+	["||Embryo Riven day2||_STS"] = {
+	},
+	["srcSpellClass"] = {
+	},
+	["sidasacconfigsub"] = {
+		["_param"] = {
+		},
+		["ToggleRightClickDisable"] = true,
+		["SupportMode"] = false,
+		["_tsInstances"] = {
+		},
+		["FocusedTarget"] = 1,
+		["HoldZone"] = false,
+		["AttackStructures"] = true,
+	},
+	["sidasacconfigsub_sidasacdrawingsub"] = {
+		["RangeCircle"] = true,
+		["TargetCircleColour"] = {
+			[1] = 255,
+			[2] = 0,
+			[4] = 95,
+			[3] = 112,
+		},
+		["TargetCircle"] = true,
+		["LowFPSCir"] = true,
+		["PermaShow"] = true,
+		["TargetLock"] = true,
+		["RangeCircleColour"] = {
+			[1] = 255,
+			[2] = 0,
+			[4] = 22,
+			[3] = 189,
+		},
+		["TargetLockColour"] = {
+			[1] = 255,
+			[2] = 173,
+			[4] = 0,
+			[3] = 0,
+		},
+		["MeleeStickyColour"] = {
+			[1] = 183,
+			[2] = 0,
+			[4] = 173,
+			[3] = 26,
+		},
+		["_tsInstances"] = {
+		},
+		["MeleeSticky"] = true,
+		["_param"] = {
+		},
+		["TargetLockText"] = true,
+	},
+	["sidasacskills_QLaywast"] = {
+	},
+	["Auto-0802013074"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["_tsInstances"] = {
+		},
+		["useItem"] = true,
+		["Toggle"] = false,
+	},
+	["sidasacskills_WEssenceFlux"] = {
+	},
+	["sidasacskills_EArcaneShift"] = {
+	},
+	["||| Embryo 141227 |||_SmiteBang"] = {
+	},
+	["EmbryoRiven_Items"] = {
+		["_param"] = {
+		},
+		["useTE"] = true,
+		["_tsInstances"] = {
+		},
+		["ignite"] = true,
+		["useTW"] = true,
+		["useAll"] = true,
+	},
+	["||| Embryo 0819-1 |||_wardBush"] = {
+		["_tsInstances"] = {
+		},
+		["wardBushSwitch"] = true,
+		["wardBushTimer"] = 6,
+		["_param"] = {
+		},
+	},
+	["Auto-0802013143"] = {
+	},
+	["||Embryo Riven day||_farmSub"] = {
+		["_param"] = {
+		},
+		["clear"] = true,
+		["_tsInstances"] = {
+		},
+		["jungle"] = true,
+	},
+	["||Embryo Riven day2||_farmSub"] = {
+	},
+	["Freaking Good Evade"] = {
+		["usedashes"] = true,
+		["useSummonerFlash"] = true,
+		["dodgeCConly2"] = false,
+		["dodgeEnabled"] = true,
+		["stopCCMoves"] = true,
+		["lineallways"] = true,
+		["freemovementblock"] = false,
+		["drawEnabled"] = false,
+		["_param"] = {
+			[5] = {
+				["key"] = 77,
+			},
+			[12] = {
+				["key"] = 17,
+			},
+			[3] = {
+				["key"] = 191,
+			},
+			[4] = {
+				["key"] = 32,
+			},
+		},
+		["resetdodge"] = false,
+		["oldDrawing"] = false,
+		["evadeBuffer"] = 15,
+		["dashMouse"] = false,
+		["dashPercent"] = 100,
+		["_tsInstances"] = {
+		},
+		["allowMove"] = true,
+		["dodgeCConly"] = false,
+		["fowdelay"] = 1,
+	},
+	["sidasacconfigsub_sidasacminionhealthsub"] = {
+	},
+	["EmbryoRiven_Drawings_circle2"] = {
+		["_param"] = {
+		},
+		["circle2enabled"] = false,
+		["_tsInstances"] = {
+		},
+		["circle2color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["circle2width"] = 1,
+		["circle2quality"] = 50,
+	},
+	["||Embryo Riven day||_Q"] = {
+		["rangegap2"] = 2383,
+		["cacelDelay"] = 0,
+		["cast"] = false,
+		["rangegap0"] = 2324,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["farm"] = true,
+		["countQ"] = 1,
+		["rangegap1"] = 2324,
+		["gap1"] = true,
+		["_tsInstances"] = {
+		},
+		["ks"] = true,
+		["gap0"] = true,
+		["gap2"] = true,
+	},
+	["||Embryo Viktor day||_E"] = {
+		["farm"] = true,
+		["cast"] = false,
+		["_tsInstances"] = {
+		},
+		["ks"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+	},
+	["||Embryo Viktor day||_Items"] = {
+	},
+	["||Embryo Riven day||_STS_STS"] = {
+	},
+	["WoongEzreal_ks"] = {
+	},
+	["||Embryo Riven day||_autoTravel"] = {
+		["_param"] = {
+		},
+		["Traval"] = false,
+		["_tsInstances"] = {
+		},
+		["enemyRange"] = 1750,
+		["range"] = 2000,
+		["creepRange"] = 1750,
+	},
+	["||| Embryo 141227 |||_Mana_summoner"] = {
+	},
+	["EmbryoRiven_R"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["ERQ"] = true,
+		["auto"] = true,
+		["ER2Q"] = true,
+		["_tsInstances"] = {
+		},
+		["ks"] = true,
+		["rCount"] = 2,
+		["cast"] = false,
+	},
+	["||| NEKO5 AI 0801-1 |||_GameSettings"] = {
+		["Executioner"] = true,
+		["Ward1"] = false,
+		["startLane"] = 4,
+		["LaneClock"] = 15,
+		["_tsInstances"] = {
+		},
+		["ddalPiconfig"] = true,
+		["Spellblade"] = true,
+		["_param"] = {
+		},
+	},
+	["sidasacskills_QMysticShot"] = {
+	},
+	["WoongEzreal_harass"] = {
+	},
+	["||Embryo Karthus day||_STS_STS"] = {
+	},
+	["||Embryo Karthus day||_Q"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["farm"] = true,
+		["_tsInstances"] = {
+		},
+		["cast"] = false,
+	},
+	["Auto-0802013040"] = {
+		["Burst"] = 20,
+		["minHP"] = 72,
+		["_tsInstances"] = {
+		},
+		["useItem"] = true,
+		["_param"] = {
+		},
+	},
+	["||Embryo Riven day2||_Q"] = {
+		["rangegap2"] = 2500,
+		["cacelDelay"] = 0,
+		["cast"] = false,
+		["rangegap0"] = 2500,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["farm"] = true,
+		["countQ"] = 3,
+		["rangegap1"] = 2500,
+		["gap1"] = true,
+		["_tsInstances"] = {
+		},
+		["ks"] = true,
+		["gap0"] = true,
+		["gap2"] = true,
+	},
+	["||Embryo Riven day||_Drawings_circle4"] = {
+		["_param"] = {
+		},
+		["circle4width"] = 1,
+		["_tsInstances"] = {
+		},
+		["circle4color"] = {
+			[1] = 205,
+			[2] = 255,
+			[4] = 0,
+			[3] = 0,
+		},
+		["circle4quality"] = 180,
+		["circle4enabled"] = false,
+	},
+	["||Embryo Karthus day||_W"] = {
+	},
+	["||Embryo Karthus day||_Drawings"] = {
+		["_param"] = {
+		},
+		["debug"] = false,
+		["_tsInstances"] = {
+		},
+	},
+	["||| Embryo 141227 |||_ASHConfig"] = {
+	},
+	["EmbryoRiven_farmSub"] = {
+		["_param"] = {
+		},
+		["jungle"] = true,
+		["_tsInstances"] = {
+		},
+		["eRange"] = 10,
+		["clear"] = true,
+	},
+	["||| Embryo 0819-1 |||_ASConfig"] = {
+		["_param"] = {
+		},
+		["teammateshield5"] = true,
+		["teammateshield4"] = true,
+		["mindmgpercent"] = 11,
+		["teammateshield2"] = true,
+		["_tsInstances"] = {
+		},
+		["teammateshield1"] = true,
+		["maxhppercent"] = 100,
+		["skillshots"] = true,
+		["shieldslow"] = true,
+		["teammateshield3"] = true,
+		["shieldcc"] = true,
+	},
+	["Auto-0802013142"] = {
+	},
+	["||Embryo Viktor day||_Drawings_circle3"] = {
+		["_param"] = {
+		},
+		["circle3quality"] = 110,
+		["_tsInstances"] = {
+		},
+		["circle3width"] = 1,
+		["circle3color"] = {
+			[1] = 205,
+			[2] = 86,
+			[4] = 67,
+			[3] = 230,
+		},
+		["circle3enabled"] = false,
+	},
+	["||| NEKO5 AI 0801-1 |||"] = {
+		["_param"] = {
+		},
+		["_tsInstances"] = {
+			[1] = {
+				["mode"] = 7,
+			},
+		},
+		["PVP"] = true,
+	},
+	["||Embryo Viktor day||_farmSub"] = {
+	},
+	["Riven_Drawings_circle1"] = {
+		["_param"] = {
+		},
+		["circle1color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["_tsInstances"] = {
+		},
+		["circle1width"] = 1,
+		["circle1enabled"] = false,
+		["circle1quality"] = 52,
+	},
+	["||Embryo Riven day||_W"] = {
+		["_param"] = {
+		},
+		["ks"] = true,
+		["countQ"] = 1,
+		["_tsInstances"] = {
+		},
+	},
+	["Riven_STS_STS"] = {
+	},
+	["||Embryo Riven day||_R"] = {
+	},
+	["Auto-0802013144"] = {
+		["Burst"] = 8,
+		["minHP"] = 75,
+		["_tsInstances"] = {
+		},
+		["_param"] = {
+			[3] = {
+				["key"] = 32,
+			},
+		},
+		["useItem"] = true,
+		["Toggle"] = false,
+	},
+	["||| Embryo 141227 |||_ASBConfig"] = {
+	},
+	["||| Embryo 0819-1 |||_visionRangeE"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 192,
+			},
+		},
+		["Enable"] = true,
+		["_tsInstances"] = {
+		},
+		["DistanceV"] = 2500,
+		["TowerRange"] = true,
+		["DrawRange"] = false,
+	},
+	["WoongEzreal_lane"] = {
+	},
+	["||Embryo Karthus day||_R"] = {
+		["_param"] = {
+		},
+		["auto"] = true,
+		["_tsInstances"] = {
+		},
+		["count"] = 2,
+		["range"] = 1500,
+		["HUD"] = true,
+	},
+	["||| Embryo 141227 |||_wayPointss_MIAMenu"] = {
+		["_param"] = {
+		},
+		["inChat"] = false,
+		["toAlly"] = false,
+		["MIATime"] = 5,
+		["Enable"] = true,
+		["_tsInstances"] = {
+		},
+		["MIAloof"] = false,
+		["toAllyRange"] = 4800,
+		["MIAloofT"] = 10,
+	},
+	["sidasacsetup"] = {
+	},
+	["Auto-0802013077"] = {
+		["Burst"] = 8,
+		["minHP"] = 75,
+		["_tsInstances"] = {
+		},
+		["_param"] = {
+			[3] = {
+				["key"] = 32,
+			},
+		},
+		["useItem"] = true,
+		["Toggle"] = false,
+	},
+	["||| Embryo 141227 |||_jungleTimer"] = {
+	},
+	["||Embryo Riven day2||_Drawings_circle2"] = {
+	},
+	["||Embryo Riven day2||_Items"] = {
+	},
+	["||Embryo Riven day2||_STS_STS"] = {
+	},
+	["sidasacstreaming"] = {
+	},
+	["||| Embryo 141227 |||"] = {
+	},
+	["||Embryo Riven day2||_E"] = {
+		["rangegapE"] = 2500,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["gapE"] = true,
+		["_tsInstances"] = {
+		},
+		["gapE2"] = true,
+		["cast"] = false,
+		["countQ"] = 2,
+	},
+	["||| Embryo 0819-1 |||_Hud_EnemyHud"] = {
+		["_param"] = {
+		},
+		["Type"] = 2,
+		["Enable"] = true,
+		["Y"] = 101,
+		["_tsInstances"] = {
+		},
+		["Distance"] = 1.1100000143051,
+		["Size"] = 0.80000001192093,
+		["X"] = 947,
+	},
+	["||| Embryo 0819-1 |||_AUConfig"] = {
+		["_param"] = {
+		},
+		["teammateult4"] = true,
+		["mindmgpercent"] = 20,
+		["teammateult5"] = true,
+		["teammateult2"] = true,
+		["teammateult3"] = true,
+		["teammateult1"] = true,
+		["skillshots"] = true,
+		["maxhppercent"] = 75,
+		["_tsInstances"] = {
+		},
+	},
+	["EmbryoRiven_STS"] = {
+		["_param"] = {
+		},
+		["mode"] = 1,
+		["Selected"] = true,
+		["_tsInstances"] = {
+		},
+	},
+	["WoongEzreal_HitChance"] = {
+	},
+	["||| Embryo 141227 |||_wardStelth"] = {
+	},
+	["||Embryo Karthus day||_Drawings_circle2"] = {
+		["_param"] = {
+		},
+		["circle2enabled"] = false,
+		["_tsInstances"] = {
+		},
+		["circle2color"] = {
+			[1] = 205,
+			[2] = 230,
+			[4] = 67,
+			[3] = 67,
+		},
+		["circle2width"] = 1,
+		["circle2quality"] = 200,
+	},
+	["||| Embryo 141227 |||_AUConfig"] = {
+	},
+	["Menu"] = {
+		["pDraw"] = {
+			["x"] = 153,
+			["y"] = 31,
+		},
+		["draw"] = {
+			["x"] = 73,
+			["y"] = 222,
+		},
+		["menuKey"] = 16,
+	},
+	["||| NEKO AI 0801-1 |||_ClockSettings"] = {
+		["_param"] = {
+		},
+		["_tsInstances"] = {
+		},
+		["BrainClock2"] = 85,
+		["Interval"] = 203,
+	},
+	["||Embryo Riven day||_Drawings_circle1"] = {
+		["_param"] = {
+		},
+		["circle1color"] = {
+			[1] = 205,
+			[2] = 255,
+			[4] = 0,
+			[3] = 234,
+		},
+		["_tsInstances"] = {
+		},
+		["circle1width"] = 1,
+		["circle1enabled"] = false,
+		["circle1quality"] = 52,
+	},
+	["||Embryo Karthus day||_Drawings_circle3"] = {
+		["_param"] = {
+		},
+		["circle3quality"] = 110,
+		["_tsInstances"] = {
+		},
+		["circle3width"] = 1,
+		["circle3color"] = {
+			[1] = 205,
+			[2] = 86,
+			[4] = 67,
+			[3] = 230,
+		},
+		["circle3enabled"] = false,
+	},
+	["||Embryo Riven day2||"] = {
+	},
+	["||| Embryo 141227 |||_exhoustSpell"] = {
+	},
+	["||Embryo Karthus day||_farmSub"] = {
+	},
+	["Auto-0802013157"] = {
+		["Burst"] = 25,
+		["minHP"] = 55,
+		["zonyaRange"] = 630,
+		["_tsInstances"] = {
+		},
+		["useItem"] = true,
+		["_param"] = {
+		},
+	},
+	["sidasfarming_sidasacpredictionfarm"] = {
+		["_tsInstances"] = {
+		},
+		["laneClearType"] = 1,
+		["_param"] = {
+		},
+	},
+	["||Embryo Karthus day||"] = {
+		["farm"] = false,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+			[2] = {
+				["key"] = 90,
+			},
+			[4] = {
+				["key"] = 88,
+			},
+			[3] = {
+				["key"] = 67,
+			},
+		},
+		["_tsInstances"] = {
+		},
+		["orbEnable"] = false,
+		["holdLane"] = false,
+		["harrasQ"] = false,
+	},
+	["||Embryo Riven day||_Orbwalking"] = {
+		["_param"] = {
+		},
+		["cancel"] = 1,
+		["_tsInstances"] = {
+		},
+		["EVADE"] = true,
+		["minionMarker"] = true,
+	},
+	["FGE skillshots config"] = {
+	},
+	["VPrediction"] = {
+	},
+	["||Embryo Riven day2||_autoTravel"] = {
+	},
+	["EmbryoRiven_autoTravel"] = {
+		["_param"] = {
+		},
+		["Traval"] = true,
+		["_tsInstances"] = {
+		},
+		["enemyRange"] = 1380,
+		["range"] = 2376,
+		["creepRange"] = 1239,
+	},
+	["EmbryoRiven_Orbwalking"] = {
+		["_param"] = {
+		},
+		["cancel"] = 1,
+		["_tsInstances"] = {
+		},
+		["EVADE"] = true,
+		["minionMarker"] = true,
+	},
+	["||Embryo Karthus day||_Items"] = {
+	},
+	["||| Embryo 0819-1 |||_QssConfig"] = {
+		["Exhaust"] = true,
+		["ROOTS"] = true,
+		["Mikael2"] = true,
+		["TAUNTS"] = true,
+		["SILENCE"] = true,
+		["CHARMS"] = true,
+		["CAllways"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["CCC"] = false,
+		["Ignite"] = true,
+		["DISARMS"] = true,
+		["SUPPRESS"] = true,
+		["Mikael"] = true,
+		["Mikael3"] = true,
+		["BLINDS"] = true,
+		["SLOWS"] = false,
+		["Mikael1"] = true,
+		["_tsInstances"] = {
+		},
+		["STUNS"] = true,
+		["Mikael4"] = true,
+		["FEARS"] = true,
+	},
+	["||| Embryo 0819-1 |||_Unlock"] = {
+		["_param"] = {
+			[11] = {
+				["key"] = 187,
+			},
+		},
+		["code1"] = 7,
+		["code6"] = 9,
+		["code3"] = 0,
+		["reset"] = false,
+		["temp"] = false,
+		["code7"] = 3,
+		["isBOL"] = true,
+		["code5"] = 6,
+		["_tsInstances"] = {
+		},
+		["Y"] = 359,
+		["code4"] = 1,
+		["code2"] = 2,
+		["temp4"] = false,
+		["code8"] = 2,
+	},
+	["||| Embryo 141227 |||_Unlock"] = {
+	},
+	["||| Embryo 0819-1 |||_ASBConfig"] = {
+		["_param"] = {
+		},
+		["barrieron"] = true,
+		["_tsInstances"] = {
+		},
+		["skillshots"] = true,
+		["maxhppercent"] = 43,
+		["mindmgpercent"] = 28,
+	},
+	["||Embryo Viktor day||_Drawings_circle1"] = {
+		["_param"] = {
+		},
+		["circle1color"] = {
+			[1] = 205,
+			[2] = 255,
+			[4] = 0,
+			[3] = 234,
+		},
+		["_tsInstances"] = {
+		},
+		["circle1width"] = 1,
+		["circle1enabled"] = false,
+		["circle1quality"] = 120,
+	},
+	["||| Embryo 0819-1 |||_turnAround"] = {
+	},
+	["||Embryo Riven day2||_W_WF"] = {
+		["_param"] = {
+		},
+		["force"] = false,
+		["eTower"] = false,
+		["_tsInstances"] = {
+		},
+	},
+	["WoongEzreal"] = {
+	},
+	["sidasfarming_sidasacsubmasteries"] = {
+	},
+	["Riven_Drawings_circle4"] = {
+		["_param"] = {
+		},
+		["circle4width"] = 1,
+		["_tsInstances"] = {
+		},
+		["circle4color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["circle4quality"] = 180,
+		["circle4enabled"] = false,
+	},
+	["VPrediction_Collision"] = {
+		["_param"] = {
+		},
+		["Buffer"] = 20,
+		["CHealth"] = false,
+		["UnitPos"] = true,
+		["CastPos"] = true,
+		["PredictPos"] = true,
+		["_tsInstances"] = {
+		},
+		["Minions"] = true,
+		["Mobs"] = true,
+		["Others"] = true,
+	},
+	["||| Embryo 0819-1 |||_AHConfig"] = {
+		["_param"] = {
+		},
+		["teammateheal3"] = true,
+		["teammateheal4"] = true,
+		["mindmgpercent"] = 20,
+		["teammateheal2"] = true,
+		["_tsInstances"] = {
+		},
+		["skillshots"] = true,
+		["teammateheal5"] = true,
+		["maxhppercent"] = 75,
+		["teammateheal1"] = true,
+	},
+	["||Embryo Viktor day||_W"] = {
+	},
+	["||| Embryo 141227 |||_wayPointss_GankMenu"] = {
+	},
+	["EmbryoRiven_W"] = {
+		["_param"] = {
+		},
+		["ks"] = true,
+		["countQ"] = 3,
+		["_tsInstances"] = {
+		},
+	},
+	["EmbryoRiven_Drawings_circle1"] = {
+		["_param"] = {
+		},
+		["circle1color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["_tsInstances"] = {
+		},
+		["circle1width"] = 1,
+		["circle1enabled"] = false,
+		["circle1quality"] = 52,
+	},
+	["Info"] = {
+		["_param"] = {
+			[6] = {
+				["key"] = 85,
+			},
+			[9] = {
+				["key"] = 78,
+			},
+			[7] = {
+				["key"] = 90,
+			},
+			[8] = {
+				["key"] = 73,
+			},
+		},
+		["onlyme"] = true,
+		["StatusRcvPkt"] = true,
+		["hk"] = false,
+		["LOG"] = true,
+		["slt"] = 0,
+		["showrlt"] = true,
+		["decryptrcv"] = true,
+		["showsnd"] = true,
+		["StatusSndPkt"] = true,
+		["_tsInstances"] = {
+		},
+		["shortlog"] = false,
+		["decrypt"] = true,
+		["showrcv"] = true,
+	},
+	["||Embryo Riven day2||_Drawings_circle4"] = {
+	},
+	["EmbryoRiven_Drawings_circle4"] = {
+		["_param"] = {
+		},
+		["circle4width"] = 1,
+		["_tsInstances"] = {
+		},
+		["circle4color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["circle4quality"] = 180,
+		["circle4enabled"] = false,
+	},
+	["sidasacskills_QBoomerangBlade"] = {
+	},
+	["||| Embryo 0819-1 |||_wardStelth"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["_tsInstances"] = {
+		},
+		["Enable"] = true,
+		["Toggle"] = false,
+	},
+	["||| NEKO AI 0801-1 |||"] = {
+	},
+	["sidasacconfigsub_sidasacenemyrangesub"] = {
+	},
+	["||| Embryo 141227 |||_turnAround"] = {
+	},
+	["||| Embryo 0819-1 |||_wayPointss_GankMenu"] = {
+		["_param"] = {
+		},
+		["challengerTT"] = 4,
+		["Enable"] = true,
+		["_tsInstances"] = {
+		},
+		["inChat"] = true,
+	},
+	["||| Embryo 0819-1 |||_Mana_summoner"] = {
+		["_param"] = {
+		},
+		["maxManaR"] = 49,
+		["teammateMana4"] = true,
+		["teammateMana2"] = true,
+		["_tsInstances"] = {
+		},
+		["teammateMana3"] = true,
+		["teammateMana5"] = true,
+		["teammateMana1"] = true,
+	},
+	["||Embryo Viktor day||_Drawings_circle5"] = {
+		["circle5width"] = 1,
+		["circle5quality"] = 140,
+		["_tsInstances"] = {
+		},
+		["circle5enabled"] = false,
+		["circle5color"] = {
+			[1] = 205,
+			[2] = 255,
+			[4] = 0,
+			[3] = 0,
+		},
+		["_param"] = {
+		},
+	},
+	["||| Embryo 141227 |||_wardBush"] = {
+	},
+	["||Embryo Viktor day||"] = {
+		["farm"] = false,
+		["harrasE"] = false,
+		["_tsInstances"] = {
+		},
+		["orbEnable"] = false,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+			[2] = {
+				["key"] = 88,
+			},
+			[4] = {
+				["key"] = 88,
+			},
+			[3] = {
+				["key"] = 67,
+			},
+		},
+		["holdLane"] = false,
+	},
+	["Master"] = {
+		["PS1"] = 1,
+		["P1"] = 30,
+		["name1"] = "||| Embryo 141227 |||",
+		["iCount"] = 1,
+		["x"] = 73,
+		["osTime"] = 1420094756,
+		["y"] = 222,
+		["useTS"] = false,
+		["I1"] = 7,
+		["py"] = 31,
+		["px"] = 153,
+	},
+	["||| Embryo 141227 |||_AHConfig"] = {
+	},
+	["||| NEKO AI 0801-1 |||_GhostSettings"] = {
+		["_param"] = {
+		},
+		["helloSwitch2"] = false,
+		["_tsInstances"] = {
+		},
+		["koreaChat"] = false,
+		["laneChat"] = false,
+	},
+	["||Embryo Viktor day||_Drawings"] = {
+	},
+	["sidasacskills_RTrueshotBarrage"] = {
+	},
+	["EmbryoRiven_Q"] = {
+		["rangegap2"] = 2500,
+		["cacelDelay"] = 0,
+		["cast"] = false,
+		["rangegap0"] = 2500,
+		["farm"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["rangegap1"] = 2500,
+		["gap1"] = true,
+		["_tsInstances"] = {
+		},
+		["ks"] = true,
+		["gap0"] = true,
+		["gap2"] = true,
+	},
+	["EmbryoRiven_Drawings"] = {
+		["_param"] = {
+		},
+		["debug"] = true,
+		["_tsInstances"] = {
+		},
+	},
+	["||| Embryo 141227 |||_wayPointss_wayPointssMenu"] = {
+	},
+	["sidasacconfigsub_sidasacadvancedsub"] = {
+	},
+	["||Embryo Karthus day||_E"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["farm"] = false,
+		["_tsInstances"] = {
+		},
+		["cast"] = false,
+	},
+	["||| NEKO AI 0801-1 |||_Debugger"] = {
+		["circleDraw"] = 400,
+		["debugprint7"] = false,
+		["circleDraw2"] = false,
+		["debugprint"] = true,
+		["debugprint5"] = false,
+		["debugprint4"] = false,
+		["debugTime"] = 1,
+		["debugprint8"] = false,
+		["debugprint3"] = false,
+		["_param"] = {
+		},
+		["debugprint9"] = false,
+		["_tsInstances"] = {
+		},
+		["debugprint10"] = false,
+		["debugprint2"] = false,
+		["debugprint6"] = false,
+	},
+	["||Embryo Riven day2||_Drawings_circle1"] = {
+	},
+	["||Embryo Riven day||"] = {
+		["farm"] = false,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+			[2] = {
+				["key"] = 67,
+			},
+			[4] = {
+				["key"] = 84,
+			},
+			[5] = {
+				["key"] = 90,
+			},
+			[3] = {
+				["key"] = 88,
+			},
+		},
+		["holdLane"] = false,
+		["_tsInstances"] = {
+		},
+		["orbEnable"] = false,
+		["Jump"] = false,
+		["flee"] = false,
+	},
+	["Riven_E"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 86,
+			},
+		},
+		["cast"] = false,
+		["_tsInstances"] = {
+		},
+		["ult"] = true,
+		["tiamat"] = true,
+	},
+	["Riven_STS"] = {
+		["_param"] = {
+		},
+		["mode"] = 3,
+		["Selected"] = true,
+		["_tsInstances"] = {
+		},
+	},
+	["Riven_Drawings_circle2"] = {
+		["_param"] = {
+		},
+		["circle2enabled"] = false,
+		["_tsInstances"] = {
+		},
+		["circle2color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["circle2width"] = 1,
+		["circle2quality"] = 50,
+	},
+	["||| Embryo 141227 |||_Hud_AllyHud"] = {
+		["_param"] = {
+		},
+		["Enable"] = false,
+		["Y"] = 137,
+		["_tsInstances"] = {
+		},
+		["Distance"] = 0.78,
+		["Size"] = 0.78,
+		["X"] = 22,
+	},
+	["EmbryoRiven_Drawings_circle3"] = {
+		["_param"] = {
+		},
+		["circle3quality"] = 65,
+		["_tsInstances"] = {
+		},
+		["circle3width"] = 1,
+		["circle3color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["circle3enabled"] = false,
+	},
+	["||| Embryo 0819-1 |||_wayPointss_MIAMenu"] = {
+		["_param"] = {
+		},
+		["inChat"] = true,
+		["toAlly"] = true,
+		["MIATime"] = 5,
+		["Enable"] = true,
+		["_tsInstances"] = {
+		},
+		["MIAloof"] = true,
+		["toAllyRange"] = 3200,
+		["MIAloofT"] = 10,
+	},
+	["||Embryo Riven day||_E"] = {
+		["rangegapE"] = 2500,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["gapE"] = true,
+		["_tsInstances"] = {
+		},
+		["gapE2"] = true,
+		["cast"] = false,
+		["countQ"] = 1,
+	},
+	["||Embryo Riven day||_Items"] = {
+	},
+	["WoongEzreal_misc"] = {
+	},
+	["||| Embryo 0819-1 |||_igniteSpell"] = {
+	},
+	["WoongEzreal_jungle"] = {
+	},
+	["Riven_Q"] = {
+		["q0"] = 0.25,
+		["q1"] = 0.25,
+		["q2"] = 0.25,
+		["farm"] = true,
+		["ks"] = true,
+		["gap0"] = true,
+		["gap2"] = true,
+		["rangegap0"] = 300,
+		["cast"] = false,
+		["aaCombo"] = true,
+		["default"] = false,
+		["rangegap2"] = 300,
+		["gap1"] = true,
+		["_tsInstances"] = {
+		},
+		["_param"] = {
+			[1] = {
+				["key"] = 86,
+			},
+		},
+		["aaFarm"] = true,
+		["rangegap1"] = 300,
+	},
+	["Auto-0802013153"] = {
+		["Burst"] = 8,
+		["minHP"] = 75,
+		["_tsInstances"] = {
+		},
+		["_param"] = {
+			[3] = {
+				["key"] = 32,
+			},
+		},
+		["useItem"] = true,
+		["Toggle"] = false,
+	},
+	["||| Embryo 141227 |||_Hud_expMenu"] = {
+		["_param"] = {
+		},
+		["enable"] = false,
+		["_tsInstances"] = {
+		},
+		["displayMyCircle"] = false,
+		["displayCircleMinions"] = false,
+	},
+	["||| Embryo 0819-1 |||_WardCheck"] = {
+		["Tick"] = 0.2,
+		["OwnTeam"] = true,
+		["ShowTraps"] = true,
+		["Marker"] = 5,
+		["Enable"] = true,
+		["PingWards"] = false,
+		["_param"] = {
+			[1] = {
+				["key"] = 192,
+			},
+			[2] = {
+				["key"] = 192,
+			},
+		},
+		["DrawRange"] = false,
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Riven day2||_Drawings_circle3"] = {
+	},
+	["Riven_Drawings_circle3"] = {
+		["_param"] = {
+		},
+		["circle3quality"] = 65,
+		["_tsInstances"] = {
+		},
+		["circle3width"] = 1,
+		["circle3color"] = {
+			[1] = 255,
+			[2] = 255,
+			[4] = 255,
+			[3] = 255,
+		},
+		["circle3enabled"] = false,
+	},
+	["||| NEKO5 AI 0801-1 |||_DebuggerCode"] = {
+		["_param"] = {
+		},
+		["code1"] = 8,
+		["_tsInstances"] = {
+		},
+		["code2"] = 5,
+		["code4"] = 7,
+		["code3"] = 8,
+	},
+	["||Embryo Viktor day||_Orbwalking"] = {
+		["_param"] = {
+		},
+		["AA"] = true,
+		["_tsInstances"] = {
+		},
+		["force"] = 1,
+		["minionMarker"] = true,
+	},
+	["||| Embryo 141227 |||_igniteSpell"] = {
+		["_param"] = {
+		},
+		["percent"] = 3,
+		["_tsInstances"] = {
+		},
+		["igniteBang"] = true,
+	},
+	["||| NEKO5 AI 0801-1 |||_Debugger"] = {
+		["circleDraw"] = 773,
+		["debugprint7"] = true,
+		["circleDraw2"] = false,
+		["debugprint"] = true,
+		["debugprint5"] = false,
+		["debugprint4"] = false,
+		["debugTime"] = 1,
+		["debugprint8"] = false,
+		["debugprint3"] = false,
+		["_param"] = {
+		},
+		["debugprint9"] = false,
+		["_tsInstances"] = {
+		},
+		["debugprint10"] = false,
+		["debugprint2"] = false,
+		["debugprint6"] = false,
+	},
+	["WoongEzreal_drawing_lfc"] = {
+	},
+	["Prodiction"] = {
+	},
+	["||Embryo Riven day||_Drawings"] = {
+		["_param"] = {
+		},
+		["debug"] = true,
+		["_tsInstances"] = {
+		},
+	},
+	["Auto-0802013128"] = {
+		["Burst"] = 8,
+		["minHP"] = 75,
+		["_tsInstances"] = {
+		},
+		["_param"] = {
+			[3] = {
+				["key"] = 32,
+			},
+		},
+		["useItem"] = true,
+		["Toggle"] = false,
+	},
+	["Auto-0802013090"] = {
+	},
+	["WoongEzreal_drawing"] = {
+	},
+	["||| Embryo 141227 |||_Hud_EnemyHud"] = {
+		["_param"] = {
+		},
+		["Type"] = 2,
+		["Enable"] = true,
+		["Y"] = 100,
+		["_tsInstances"] = {
+		},
+		["Distance"] = 1.1,
+		["Size"] = 0.8,
+		["X"] = 928,
+	},
+	["||Embryo Karthus day||_Drawings_circle1"] = {
+		["_param"] = {
+		},
+		["circle1color"] = {
+			[1] = 205,
+			[2] = 255,
+			[4] = 0,
+			[3] = 234,
+		},
+		["_tsInstances"] = {
+		},
+		["circle1width"] = 1,
+		["circle1enabled"] = true,
+		["circle1quality"] = 175,
+	},
+	["||| Embryo 141227 |||_autoLantern"] = {
+	},
+	["||| Embryo 0819-1 |||"] = {
+		["_param"] = {
+		},
+		["AllPings"] = false,
+		["_tsInstances"] = {
+		},
+	},
+	["||| Embryo 141227 |||_Hud"] = {
+	},
+	["||| NEKO AI 0801-1 |||_GameSettings"] = {
+		["Executioner"] = true,
+		["Ward1"] = false,
+		["startLane"] = 4,
+		["LaneClock"] = 15,
+		["_tsInstances"] = {
+		},
+		["ddalPiconfig"] = true,
+		["Spellblade"] = true,
+		["_param"] = {
+		},
+	},
+	["||Embryo Riven day2||_Drawings"] = {
+		["_param"] = {
+		},
+		["debug"] = false,
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Viktor day||_Drawings_circle2"] = {
+		["_param"] = {
+		},
+		["circle2enabled"] = false,
+		["_tsInstances"] = {
+		},
+		["circle2color"] = {
+			[1] = 205,
+			[2] = 231,
+			[4] = 184,
+			[3] = 64,
+		},
+		["circle2width"] = 1,
+		["circle2quality"] = 140,
+	},
+	["||| NEKO5 AI 0801-1 |||_ClockSettings"] = {
+	},
+	["||| Embryo 0819-1 |||_autoLantern"] = {
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["Enable"] = true,
+		["_tsInstances"] = {
+		},
+		["Health"] = 35,
+		["Toggle"] = false,
+	},
+	["||| Embryo 0819-1 |||_ASHConfig"] = {
+		["_param"] = {
+		},
+		["teammatesheal1"] = true,
+		["teammatesheal3"] = true,
+		["teammatesheal5"] = true,
+		["mindmgpercent"] = 20,
+		["teammatesheal4"] = true,
+		["skillshots"] = true,
+		["teammatesheal2"] = true,
+		["maxhppercent"] = 55,
+		["_tsInstances"] = {
+		},
+	},
+	["EmbryoRiven_E"] = {
+		["rangegapE"] = 2500,
+		["gapE"] = true,
+		["_tsInstances"] = {
+		},
+		["gapE2"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+		["cast"] = false,
+	},
+	["EmbryoRiven_STS_STS"] = {
+	},
+	["||| Embryo 141227 |||_visionRangeE"] = {
+	},
+	["JW_Loader"] = {
+		["_param"] = {
+		},
+		["Depend"] = 2,
+		["_tsInstances"] = {
+		},
+	},
+	["JumpAssistant"] = {
+	},
+	["||| Embryo 0819-1 |||_wayPointss_wayPointssMenu"] = {
+		["_param"] = {
+		},
+		["Enable"] = true,
+		["wayAllies"] = true,
+		["_tsInstances"] = {
+		},
+		["wayMinimap"] = true,
+		["wayEnemies"] = true,
+	},
+	["||| Embryo 0819-1 |||_jungleTimer"] = {
+		["_param"] = {
+		},
+		["_tsInstances"] = {
+		},
+		["enable"] = true,
+		["circleHealthLeft"] = true,
+	},
+	["sidasacsetup_sidasacmixedmodesub"] = {
+		["Movement"] = true,
+		["Attacks"] = true,
+		["YoumuusGhostbladeMixedMode"] = false,
+		["Active"] = false,
+		["HextechGunbladeMixedMode"] = false,
+		["BlackfireTorchMixedMode"] = false,
+		["FrostQueensClaimMixedMode"] = false,
+		["TalismanofAscensionMixedMode"] = false,
+		["RavenousHydraMixedMode"] = false,
+		["BilgewaterCutlassMixedMode"] = false,
+		["_param"] = {
+			[3] = {
+				["key"] = 90,
+			},
+		},
+		["botrkSave"] = true,
+		["DeathfireGraspMixedMode"] = false,
+		["RanduinsOmenMixedMode"] = false,
+		["BladeoftheRuinedKingMixedMode"] = false,
+		["MinionPriority"] = true,
+		["MuramanaMixedMode"] = false,
+		["Toggle"] = false,
+		["_tsInstances"] = {
+		},
+		["SwordoftheDivineMixedMode"] = false,
+		["TiamatMixedMode"] = false,
+		["EntropyMixedMode"] = false,
+	},
+	["||Embryo Viktor day||_Q"] = {
+		["farm"] = true,
+		["cast"] = false,
+		["_tsInstances"] = {
+		},
+		["ks"] = true,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+		},
+	},
+	["EmbryoRiven"] = {
+		["farm"] = false,
+		["_param"] = {
+			[1] = {
+				["key"] = 32,
+			},
+			[2] = {
+				["key"] = 67,
+			},
+			[4] = {
+				["key"] = 84,
+			},
+			[5] = {
+				["key"] = 90,
+			},
+			[3] = {
+				["key"] = 88,
+			},
+		},
+		["holdLane"] = false,
+		["_tsInstances"] = {
+		},
+		["orbEnable"] = false,
+		["Jump"] = false,
+		["flee"] = false,
+	},
+	["||Embryo Riven day||_Drawings_circle3"] = {
+		["_param"] = {
+		},
+		["circle3quality"] = 65,
+		["_tsInstances"] = {
+		},
+		["circle3width"] = 1,
+		["circle3color"] = {
+			[1] = 205,
+			[2] = 86,
+			[4] = 67,
+			[3] = 230,
+		},
+		["circle3enabled"] = false,
+	},
+	["sidasacsetup_sidasaclaneclearsub"] = {
+		["Movement"] = true,
+		["TiamatLaneClear"] = false,
+		["AttackEnemies"] = false,
+		["RavenousHydraLaneClear"] = false,
+		["DeathfireGraspLaneClear"] = false,
+		["MinionPriority"] = false,
+		["BladeoftheRuinedKingLaneClear"] = false,
+		["_param"] = {
+			[3] = {
+				["key"] = 67,
+			},
+		},
+		["botrkSave"] = true,
+		["FrostQueensClaimLaneClear"] = false,
+		["SwordoftheDivineLaneClear"] = false,
+		["BilgewaterCutlassLaneClear"] = false,
+		["YoumuusGhostbladeLaneClear"] = false,
+		["TalismanofAscensionLaneClear"] = false,
+		["HextechGunbladeLaneClear"] = false,
+		["RanduinsOmenLaneClear"] = false,
+		["BlackfireTorchLaneClear"] = false,
+		["MuramanaLaneClear"] = false,
+		["Attacks"] = true,
+		["_tsInstances"] = {
+		},
+		["Active"] = false,
+		["EntropyLaneClear"] = false,
+		["Toggle"] = false,
+	},
+	["||Embryo Karthus day||_STS"] = {
+	},
+	["sidasacsetup_sidasaclasthitsub"] = {
+	},
+	["||| Embryo 0819-1 |||_ASIConfig"] = {
+		["_param"] = {
+		},
+		["teammateshieldi2"] = true,
+		["teammateshieldi5"] = true,
+		["mindmgpercent"] = 20,
+		["teammateshieldi4"] = true,
+		["teammateshieldi3"] = true,
+		["skillshots"] = true,
+		["teammateshieldi1"] = true,
+		["maxhppercent"] = 46,
+		["_tsInstances"] = {
+		},
+	},
+	["||Embryo Riven day2||_Orbwalking"] = {
+		["_param"] = {
+		},
+		["cancel"] = 2,
+		["_tsInstances"] = {
+		},
+		["EVADE"] = true,
+		["minionMarker"] = true,
+	},
+	["||| Embryo 141227 |||_ASIConfig"] = {
+		["_param"] = {
+		},
+		["teammateshieldi2"] = true,
+		["teammateshieldi5"] = true,
+		["mindmgpercent"] = 20,
+		["teammateshieldi4"] = true,
+		["teammateshieldi3"] = true,
+		["skillshots"] = true,
+		["teammateshieldi1"] = true,
+		["maxhppercent"] = 75,
+		["_tsInstances"] = {
+		},
+	},
+	["alerterClass"] = {
+	},
+	["sidasacconfigsub_sidasacmeleesub"] = {
+	},
+}
