@@ -1,7 +1,8 @@
 --NEKO
+if _G.FreakingGoodEvade then return end
 local SCRIPT_NAME = "FreakingGoodEvade"
-local MAJORVERSION = 1
-local SUBVERSION = 12222056 
+local MAJORVERSION = 2015
+local SUBVERSION = 01041744 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -49,6 +50,7 @@ function Update()
 end
 --}
 --{ Global VAR
+_G.FreakingGoodEvade = true
 thatfile = SCRIPT_PATH.."movementblock.txt"
 _G.evade = false
 require "old2dgeo"
