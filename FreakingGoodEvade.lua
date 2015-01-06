@@ -5,7 +5,7 @@ local MAJORVERSION = 2015
 local SUBVERSION = 01041744 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
-local AUTOUPDATE = true 
+local AUTOUPDATE = false 
 local Locale = GetLocalization() --ko_KR
 local versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.." loaded.</font>"
 local UPDATE_CHANGE_LOG
