@@ -2,20 +2,18 @@
 if _G.FreakingGoodEvade then return end
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 2015
-local SUBVERSION = 01041744 
+local SUBVERSION = 1506271931 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
-local AUTOUPDATE = false 
-local Locale = GetLocalization() --ko_KR
+local AUTOUPDATE = true 
+-- local Locale = GetLocalization() --ko_KR
 local versionmessage =	"<font color=\"#C873D9\">FreakingGoodEvade" ..MAJORVERSION.."."..SUBVERSION.." loaded.</font>"
 local UPDATE_CHANGE_LOG
 -------------------------------------------------------------------------------------------------------------
 local VERSION = tostring(MAJORVERSION) .. "." .. tostring(SUBVERSION)
-local Client	= os.getenv('APPDATA')
-local update_file = Client.."\\LolClient\\ssssssssss"
 local PATH 				= BOL_PATH.."Scripts\\FreakingGoodEvade.lua"
 local URL					= "https://raw.githubusercontent.com/livewa/Core/master/FreakingGoodEvade.lua"
-local UPDATE_TEMP_FILE = Client.."\\LolClient\\tempforNeko"
+local UPDATE_TEMP_FILE = SPRITE_PATH .. "Neko5\\Temp\\tempforNeko"
 -------------------------------------------------------------------------------------------------------------
 function Update()
 	file = io.open(UPDATE_TEMP_FILE, "rb")
