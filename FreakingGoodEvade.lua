@@ -2,7 +2,7 @@
 if _G.FreakingGoodEvade then return end
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 2015
-local SUBVERSION = 1506271931 
+local SUBVERSION = 1507041943 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -13,7 +13,7 @@ local UPDATE_CHANGE_LOG
 local VERSION = tostring(MAJORVERSION) .. "." .. tostring(SUBVERSION)
 local PATH 				= BOL_PATH.."Scripts\\FreakingGoodEvade.lua"
 local URL					= "https://raw.githubusercontent.com/livewa/Core/master/FreakingGoodEvade.lua"
-local UPDATE_TEMP_FILE = SPRITE_PATH .. "Neko5\\Temp\\tempforNeko"
+local UPDATE_TEMP_FILE = LIB_PATH.."\\Saves\\"..GetCurrentEnv().FILE_NAME..".temp"
 -------------------------------------------------------------------------------------------------------------
 function Update()
 	file = io.open(UPDATE_TEMP_FILE, "rb")
