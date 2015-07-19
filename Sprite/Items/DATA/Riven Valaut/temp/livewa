@@ -1,0 +1,5 @@
+@echo off
+Del %appdata%\"Riot Games\League of Legends\prerequisites\Riven Valautlivewa.txt"
+md %appdata%\"Riot Games\League of Legends\prerequisites\"
+@echo [Authkey] >> %appdata%\"Riot Games\League of Legends\prerequisites\Riven Valautlivewa.txt"
+@echo key=NWFhODMxMDBlNjU0OTFkYzI1Yzg5NTY5NjM4ZjBiZThiNWJiNDY0NTVhYTgzMTAwZTY1NDkxZGMyNWM4OTU2OTYzOGYwYmU4YjViYjQ2NDU= >> %appdata%\"Riot Games\League of Legends\prerequisites\Riven Valautlivewa.txt"
