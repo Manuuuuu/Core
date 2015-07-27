@@ -2,7 +2,7 @@
 if _G.FreakingGoodEvade then return end
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 2015
-local SUBVERSION = 1507041943 
+local SUBVERSION = 1507252130 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1566,29 +1566,25 @@ function OnAnimation(unit, animationName)
 	end
 end
 function OnProcessSpell(unit, spell)	
-		if unit.isMe and myHero.charName == "MasterYi" and spell.name == myHero:GetSpellData(_W).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "Nunu" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "MissFortune" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "Malzahar" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "Katarina" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "Janna" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "Galio" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "FiddleSticks" and spell.name == myHero:GetSpellData(_W).name then
-		CastingSpell = true
-		elseif unit.isMe and myHero.charName == "FiddleSticks" and spell.name == myHero:GetSpellData(_R).name then
-		CastingSpell = true
-	end
-	if unit.isMe and isLeblanc then
-		if spell.name == myHero:GetSpellData(_Q).name then lastspell = "Q"
+	if unit.isMe then
+		if (		
+			(myHero.charName == "MasterYi" and spell.name == myHero:GetSpellData(_W).name) or 
+			(myHero.charName == "Nunu" and spell.name == myHero:GetSpellData(_R).name) or 
+			(myHero.charName == "MissFortune" and spell.name == myHero:GetSpellData(_R).name) or 
+			(myHero.charName == "Malzahar" and spell.name == myHero:GetSpellData(_R).name) or 
+			(myHero.charName == "Katarina" and spell.name == myHero:GetSpellData(_R).name) or 
+			(myHero.charName == "Janna" and spell.name == myHero:GetSpellData(_R).name) or 
+			(myHero.charName == "Galio" and spell.name == myHero:GetSpellData(_R).name) or 
+			(myHero.charName == "FiddleSticks" and spell.name == myHero:GetSpellData(_W).name) or 
+			(myHero.charName == "FiddleSticks" and spell.name == myHero:GetSpellData(_R).name)
+			) then	
+			CastingSpell = true
+		end
+		if isLeblanc then
+			if spell.name == myHero:GetSpellData(_Q).name then lastspell = "Q"
 			elseif spell.name == myHero:GetSpellData(_W).name then lastspell = "W"
 			elseif spell.name == myHero:GetSpellData(_E).name then lastspell = "E"
+			end
 		end
 	end
 	if not myHero.dead and unit.team ~= myHero.team then
@@ -1674,18 +1670,18 @@ function OnDraw()
 	end
 end
 function OnWndMsg(msg, key)
-		if not VIP_USER then
-		if msg == WM_RBUTTONDOWN then
-			if evading then
-				for i, detectedSkillshot in pairs(detectedSkillshots) do
-					if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
-						dodgeSkillshot(detectedSkillshot)
-					end
-				end
-			end
-			lastMovement.destination = Point2(mousePos.x, mousePos.z)
-		end 
-	end
+		-- if not VIP_USER then
+		-- if msg == WM_RBUTTONDOWN then
+			-- if evading then
+				-- for i, detectedSkillshot in pairs(detectedSkillshots) do
+					-- if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
+						-- dodgeSkillshot(detectedSkillshot)
+					-- end
+				-- end
+			-- end
+			-- lastMovement.destination = Point2(mousePos.x, mousePos.z)
+		-- end 
+	-- end
 end
 function OnLoad()
 	hitboxSize = hitboxTable[GetMyHero().charName]
@@ -1710,7 +1706,7 @@ function OnLoad()
 	GoodEvadeConfig:addParam("stopCCMoves", "Use 0 cast time spells with self cc", SCRIPT_PARAM_ONOFF, true)
 	-- GoodEvadeConfig:addParam("freemovementblock", "Free Users Movement Block", SCRIPT_PARAM_ONOFF, false)
 	GoodEvadeConfig:addParam("oldDrawing", "Use old drawing", SCRIPT_PARAM_ONOFF, false)
-	GoodEvadeConfig:permaShow("dodgeEnabled")
+	-- GoodEvadeConfig:permaShow("dodgeEnabled")
 	for i = 1, heroManager.iCount do
 		local hero = heroManager:GetHero(i)
 		if hero.team ~= myHero.team then
