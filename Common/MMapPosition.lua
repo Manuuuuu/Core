@@ -451,8 +451,8 @@ class 'SpatialHashMap' -- {
 		end
 	end
 -- }
-class 'MMMapPosition'
-	function MMMapPosition:__init()
+class 'MMapPosition'
+	function MMapPosition:__init()
 		self.wallSpatialHashMap = SpatialHashMap(walls, 400, "walls_1_1")
 	end
 	-- Wall Functions ---------------------------------------------------------
