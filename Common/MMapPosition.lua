@@ -1,4 +1,4 @@
---[[
+ --[[
 	Map Position 1.1 by Husky and Manciuszz
 	========================================================================
 	Enables you to easily query the semantic position of a unit in the map.
