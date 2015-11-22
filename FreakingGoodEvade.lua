@@ -2,7 +2,7 @@
 if _G.FreakingGoodEvade then return end
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 2015
-local SUBVERSION = 1507252130 
+local SUBVERSION = 1511220912 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1461,69 +1461,70 @@ end
 -- end of line skillshot dodging functions --
 
 function OnSendPacket(p)
-		if VIP_USER then
-		local packet = Packet(p)
-		if packet:get('name') == 'S_MOVE' then
-			if packet:get('sourceNetworkId') == myHero.networkID then
-				if captureMovements then
-					if packet:get('targetNetworkId') == 0 then
-						lastMovement.destination = Point2(packet:get('x'), packet:get('y'))
-						lastMovement.type = packet:get('type')
-						lastMovement.targetId = packet:get('targetNetworkId')
-						lastnonattack = GetTickCount()
-					elseif lastnonattack + 1000 < GetTickCount() then
-						lastMovement.destination = Point2(packet:get('x'), packet:get('y'))
-						lastMovement.type = packet:get('type')
-						lastMovement.targetId = packet:get('targetNetworkId')
-					end
-					if evading then
-						for i, detectedSkillshot in pairs(detectedSkillshots) do
-							if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
-								dodgeSkillshot(detectedSkillshot)
-								break
-							end
-						end
-					end
-				end
-				if not allowCustomMovement then
-						for i, detectedSkillshot in pairs(detectedSkillshots) do
-							if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
-								packet:block()
-								break
-							end
-						end
-				end          
-			end
-			elseif packet:get('name') == 'S_CAST' then
-			if captureMovements and lastnonattack + 1000 < GetTickCount() then
-				lastMovement.spellId = packet:get('spellId')
-				lastMovement.type = 7
-				lastMovement.targetId = packet:get('targetNetworkId')
-				lastMovement.destination = Point2(packet:get('toX'), packet:get('toY'))
-				if evading then
-					for i, detectedSkillshot in pairs(detectedSkillshots) do
-						if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
-							dodgeSkillshot(detectedSkillshot)
-							break
-						end
-					end
-				end
-			end
-			if not (allowCustomMovement or 
-					spellStopMovement(GetMyHero().charName, packet:get('spellId'), 
-					packet.targetNetworkId == GetMyHero().NetworkId)) then
-				if packet:get('spellId') == 12 then
-				else
-					for i, detectedSkillshot in pairs(detectedSkillshots) do
-						if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
-							packet:block()
-							break
-						end
-					end
-				end
-			end
-		end
-	end
+	-- if VIP_USER then
+		-- -- local packet = Packet(p)
+		-- local packet = p
+		-- if packet:get('name') == 'S_MOVE' then
+			-- if packet:get('sourceNetworkId') == myHero.networkID then
+				-- if captureMovements then
+					-- if packet:get('targetNetworkId') == 0 then
+						-- lastMovement.destination = Point2(packet:get('x'), packet:get('y'))
+						-- lastMovement.type = packet:get('type')
+						-- lastMovement.targetId = packet:get('targetNetworkId')
+						-- lastnonattack = GetTickCount()
+					-- elseif lastnonattack + 1000 < GetTickCount() then
+						-- lastMovement.destination = Point2(packet:get('x'), packet:get('y'))
+						-- lastMovement.type = packet:get('type')
+						-- lastMovement.targetId = packet:get('targetNetworkId')
+					-- end
+					-- if evading then
+						-- for i, detectedSkillshot in pairs(detectedSkillshots) do
+							-- if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
+								-- dodgeSkillshot(detectedSkillshot)
+								-- break
+							-- end
+						-- end
+					-- end
+				-- end
+				-- if not allowCustomMovement then
+						-- for i, detectedSkillshot in pairs(detectedSkillshots) do
+							-- if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
+								-- packet:block()
+								-- break
+							-- end
+						-- end
+				-- end          
+			-- end
+			-- elseif packet:get('name') == 'S_CAST' then
+			-- if captureMovements and lastnonattack + 1000 < GetTickCount() then
+				-- lastMovement.spellId = packet:get('spellId')
+				-- lastMovement.type = 7
+				-- lastMovement.targetId = packet:get('targetNetworkId')
+				-- lastMovement.destination = Point2(packet:get('toX'), packet:get('toY'))
+				-- if evading then
+					-- for i, detectedSkillshot in pairs(detectedSkillshots) do
+						-- if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
+							-- dodgeSkillshot(detectedSkillshot)
+							-- break
+						-- end
+					-- end
+				-- end
+			-- end
+			-- if not (allowCustomMovement or 
+					-- spellStopMovement(GetMyHero().charName, packet:get('spellId'), 
+					-- packet.targetNetworkId == GetMyHero().NetworkId)) then
+				-- if packet:get('spellId') == 12 then
+				-- else
+					-- for i, detectedSkillshot in pairs(detectedSkillshots) do
+						-- if detectedSkillshot and detectedSkillshot.evading and inDangerousArea(detectedSkillshot, Point2(myHero.x, myHero.z)) then
+							-- packet:block()
+							-- break
+						-- end
+					-- end
+				-- end
+			-- end
+		-- end
+	-- end
 end
 function OnCreateObj(object)
 		if object ~= nil and object.type == "obj_GeneralParticleEmmiter" then
@@ -1565,7 +1566,17 @@ function OnAnimation(unit, animationName)
 		if unit.isMe and (animationName == "Idle1" or animationName == "Run") then CastingSpell = false end
 	end
 end
-function OnProcessSpell(unit, spell)	
+function OnProcessSpell(unit, spell)
+	if not unit or not unit.valid or not spell then return end
+	OnProcessSpell_Do(unit, spell)
+	if PluginOnProcessSpell then PluginOnProcessSpell(unit, spell) end
+end
+function OnProcessAttack(unit,spell)
+	if not unit or not unit.valid or not spell then return end
+	OnProcessSpell_Do(unit, spell)
+	if PluginOnProcessSpell then PluginOnProcessSpell(unit, spell) end
+end
+function OnProcessSpell_Do(unit, spell)
 	if unit.isMe then
 		if (		
 			(myHero.charName == "MasterYi" and spell.name == myHero:GetSpellData(_W).name) or 
