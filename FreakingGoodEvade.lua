@@ -2,7 +2,7 @@
 if _G.FreakingGoodEvade then return end
 local SCRIPT_NAME = "FreakingGoodEvade"
 local MAJORVERSION = 2015
-local SUBVERSION = 1511220912 
+local SUBVERSION = 1511251603 
 --{ UPDATE MODULE
 -------------------------------------------------------------------------------------------------------------
 local AUTOUPDATE = true 
@@ -1569,12 +1569,10 @@ end
 function OnProcessSpell(unit, spell)
 	if not unit or not unit.valid or not spell then return end
 	OnProcessSpell_Do(unit, spell)
-	if PluginOnProcessSpell then PluginOnProcessSpell(unit, spell) end
 end
 function OnProcessAttack(unit,spell)
 	if not unit or not unit.valid or not spell then return end
 	OnProcessSpell_Do(unit, spell)
-	if PluginOnProcessSpell then PluginOnProcessSpell(unit, spell) end
 end
 function OnProcessSpell_Do(unit, spell)
 	if unit.isMe then
