@@ -94,8 +94,8 @@ end
 AIData.hookByName = function(name,container)
 	local key = #dataIN + 1
 	dataIN[key] = function(obj)  if string.find(obj.name,name) ~= nil then container[#container+1] = obj end end
-	dataOUT[key] = function(obj)  
-		if string.find(obj.name,name) ~= nil then  
+	dataOUT[key] = function(obj)	
+		if obj and string.find(obj.name,name) ~= nil then  
 			for i=1,#container,1 do if container[i].networkID == obj.networkID then table.remove(container,i) return end end
 		end
 	end
@@ -106,7 +106,7 @@ AIData.hookByType = function(objType,container)
 	local key = #dataIN + 1
 	dataIN[key] = function(obj) if string.find(obj.type,objType) ~= nil then container[#container+1] = obj end end
 	dataOUT[key] = function(obj)  
-		if string.find(obj.type,objType) ~= nil then  
+		if obj and string.find(obj.type,objType) ~= nil then  
 			for i=1,#container,1 do if container[i].networkID == obj.networkID then table.remove(container,i) return end end
 		end
 	end
